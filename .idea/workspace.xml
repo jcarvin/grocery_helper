@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6871be1-c29c-4010-a915-3413edb2b309" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/purchase_log/templates/purchase_log/base.html" afterPath="$PROJECT_DIR$/purchase_log/templates/purchase_log/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/purchase_log/views.py" afterPath="$PROJECT_DIR$/purchase_log/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="grocery_helper.iws" />
@@ -524,7 +521,13 @@
       <option name="project" value="LOCAL" />
       <updated>1475863449871</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Created dropdown menu for logged in users. &#10;Created ownership of objects. &#10;limited views to users who own items.">
+      <created>1475868801581</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1475868801581</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -592,7 +595,8 @@
     <MESSAGE value="urls for purchase log" />
     <MESSAGE value="added functionality to buttons. Turned individual items into links that show thier purchase history. Added tax and subtotal functionality.&#10; &#10; Still need to create for to add receipts and link it to the button. Also need to create a way to add product types to extend the dropdown lis in the ReceiptProduct form" />
     <MESSAGE value="Added Users. Not yet with any functionality. &#10;Receipts is now fully functional in tracking purchases." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Users. Not yet with any functionality. &#10;Receipts is now fully functional in tracking purchases." />
+    <MESSAGE value="Created dropdown menu for logged in users. &#10;Created ownership of objects. &#10;limited views to users who own items." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created dropdown menu for logged in users. &#10;Created ownership of objects. &#10;limited views to users who own items." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
