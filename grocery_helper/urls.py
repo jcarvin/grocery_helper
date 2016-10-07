@@ -21,5 +21,6 @@ urlpatterns = [
     url(r'^$', include('purchase_log.urls', namespace='index')),
     url(r'^purchase_log/', include('purchase_log.urls', namespace='purchase_log')),
     url(r'^users/', include('users.urls', namespace='users')),
+    url(r'^friendship/', include('friendship.urls', namespace='friendship'))
 ]
 

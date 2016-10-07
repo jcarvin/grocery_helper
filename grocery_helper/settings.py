@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     # Third party apps
     'bootstrap3',
+    'friendship',
 
     # My Apps
     'purchase_log.apps.PurchaseLogConfig',
