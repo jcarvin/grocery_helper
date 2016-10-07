@@ -2,19 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6871be1-c29c-4010-a915-3413edb2b309" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/purchase_log/static/purchase_log/images/background.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/purchase_log/migrations/0001_initial.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/purchase_log/migrations/0002_auto_20161007_1325.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grocery_helper/templates/grocery_helper/base.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/purchase_log/forms.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/grocery_helper/static/placeholder.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/purchase_log/static/purchase_log/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/purchase_log/models.py" afterPath="$PROJECT_DIR$/purchase_log/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grocery_helper/settings.py" afterPath="$PROJECT_DIR$/grocery_helper/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grocery_helper/urls.py" afterPath="$PROJECT_DIR$/grocery_helper/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/purchase_log/urls.py" afterPath="$PROJECT_DIR$/purchase_log/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/purchase_log/views.py" afterPath="$PROJECT_DIR$/purchase_log/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="grocery_helper.iws" />
@@ -551,7 +538,13 @@
       <option name="project" value="LOCAL" />
       <updated>1475609368622</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added Users. Not yet with any functionality. &#10;Receipts is now fully functional in tracking purchases.">
+      <created>1475863311136</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1475863311136</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
