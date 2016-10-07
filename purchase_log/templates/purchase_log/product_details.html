@@ -1,0 +1,17 @@
+{% extends 'purchase_log/base.html' %}
+
+{% block title %}
+    {{ current_product }}
+{% endblock %}
+
+
+{% block body %}
+    <h1>Purchase History for {{ current_product }}</h1>
+    {% for purchase in purchase_list %}
+        <ul>
+            <li>
+                ${{ purchase.price }} - {{ purchase.receipt }}
+            </li>
+        </ul>
+    {% endfor %}
+{% endblock %}

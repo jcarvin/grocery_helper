@@ -1,0 +1,13 @@
+{% extends 'purchase_log/receipt_details.html' %}
+
+
+{% block form %}
+<form action="{% url 'purchase_log:add_product_type' current_receipt.id %}" method='post'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name='delete'>Submit</button>
+  </form>
+{% endblock %}
+
+{% block button %}
+{% endblock %}

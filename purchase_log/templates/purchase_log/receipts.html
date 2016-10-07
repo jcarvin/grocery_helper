@@ -1,0 +1,18 @@
+{% extends 'purchase_log/base.html' %}
+
+{% block title %}Receipts{% endblock %}
+
+{% block body %}
+
+    {% for receipt in receipt_list %}
+        <ul>
+            <li><a href="{% url 'purchase_log:receipt_details' receipt.id %}">{{ receipt }}</a>
+            </li>
+        </ul>
+    {% endfor %}
+    {% block form %}{% endblock %}
+    {% block button %}
+    <input type="button" onClick="window.location.href='{% url 'purchase_log:add_receipt' %}'"
+           value="Add Receipt"/>
+    {% endblock %}
+{% endblock %}
