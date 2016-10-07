@@ -24,6 +24,8 @@ def receipts(request):
 @login_required
 def receipt_details(request, receipt_id):
     current_receipt = Receipt.objects.get(id=receipt_id)
+    if current_receipt.owner != request.user:
+        raise Http404
     items = current_receipt.receiptproduct_set.all()
     for item in items:
         if item.description == 'None':
@@ -46,6 +48,8 @@ def receipt_details(request, receipt_id):
 @login_required
 def add_receipt_product(request, receipt_id):
     current_receipt = Receipt.objects.get(id=receipt_id)
+    if current_receipt.owner != request.user:
+        raise Http404
     if request.method != 'POST':
         # No data submitted; create a blank form.
         form = AddItemForm(initial={'receipt': current_receipt})
@@ -66,6 +70,8 @@ def add_receipt_product(request, receipt_id):
 @login_required
 def product_details(request, product_id):
     current_product = Product.objects.get(id=product_id)
+    if current_product.owner != request.user:
+        raise Http404
     purchase_list = [purchase for purchase in ReceiptProduct.objects.all().filter(product=current_product)]
     context = {'purchase_list': purchase_list, 'current_product': current_product}
     return render(request, 'purchase_log/product_details.html', context)

@@ -65,9 +65,19 @@
                 </li>
                 <li class="">
                     {% if user.is_authenticated %}
-                        <a href="{% url 'users:logout' %}">
-                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout
-                        </a>
+                        <div class="dropdown">
+                          <button class="btn btn-default dropdown-toggle" style="margin-top: 7px;color: darkgray;background-color: inherit;border-color: inherit" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Welcome {{ user.username }}!
+                            <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="#">Something</a></li>
+                            <li><a href="#">Something Else</a></li>
+                            <li><a href="#">Account Settings</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="{% url 'users:logout' %}"  class="glyphicon glyphicon-off"> Logout</a></li>
+                          </ul>
+                        </div>
                     {% else %}
                         <a href="{% url 'users:login' %}">
                         <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Login
@@ -83,4 +93,3 @@
 </nav>
 {% block body %}
 {% endblock %}
-</body>
