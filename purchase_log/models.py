@@ -23,6 +23,7 @@ class Receipt(models.Model):
     store = models.ForeignKey(Store)
     date = models.DateField()
     owner = models.ForeignKey(User)
+    tax = models.FloatField()
 
     def __str__(self):
         return self.store.name + ': ' + str(self.date)

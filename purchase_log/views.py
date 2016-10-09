@@ -14,10 +14,18 @@ def index(request):
 @login_required
 def receipts(request):
     receipt_list = []
+    item_list = []
+    total_dict = {}
     for receipt in Receipt.objects.all():
         if receipt.owner == request.user:
             receipt_list.append(receipt)
-    context = {'receipt_list': receipt_list}
+            temp_list = [item.price for item in receipt.receiptproduct_set.all()]
+            total_dict[receipt.id] = format(((sum(temp_list)*receipt.tax)+(sum(temp_list))), '.2f')
+    total = sum([item.price for item in item_list])
+    tax = (total*.07)
+    total_and_tax = (total + tax)
+
+    context = {'receipt_list': receipt_list, 'total_dict': total_dict}
     return render(request, 'purchase_log/receipts.html', context)
 
 
