@@ -20,10 +20,8 @@ def receipts(request):
         if receipt.owner == request.user:
             receipt_list.append(receipt)
             temp_list = [item.price for item in receipt.receiptproduct_set.all()]
-            total_dict[receipt.id] = format(((sum(temp_list)*receipt.tax)+(sum(temp_list))), '.2f')
-    total = sum([item.price for item in item_list])
-    tax = (total*.07)
-    total_and_tax = (total + tax)
+            taxed_items = [item.price for item in receipt.receiptproduct_set.all() if item.tax == True]
+            total_dict[receipt.id] = format(((sum(taxed_items)*receipt.tax)+(sum(temp_list))), '.2f')
 
     context = {'receipt_list': receipt_list, 'total_dict': total_dict}
     return render(request, 'purchase_log/receipts.html', context)
@@ -41,7 +39,8 @@ def receipt_details(request, receipt_id):
         else:
             description = item.description
     total = sum([item.price for item in items])
-    tax = (total*.07)
+    taxed_items = [item.price for item in items if item.tax == True]
+    tax = (sum(taxed_items)*.07)
     total_and_tax = (total + tax)
     context = {
         'current_receipt': current_receipt,
@@ -143,5 +142,13 @@ def add_product_type(request, receipt_id):
 @login_required
 def delete_receipt_product(request, receipt_id, pk):
     receipt_product = ReceiptProduct.objects.get(pk=pk)
-    receipt_product.delete()
+    if receipt_product.owner == request.user:
+        receipt_product.delete()
     return HttpResponseRedirect(reverse('purchase_log:receipt_details', args=[receipt_id]))
+
+@login_required
+def delete_receipt(request, receipt_id):
+    receipt = Receipt.objects.get(pk=receipt_id)
+    if receipt.owner == request.user:
+        receipt.delete()
+    return HttpResponseRedirect(reverse('purchase_log:receipts'))

@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.contrib.admin.widgets import AdminDateWidget
 
 
 class Store(models.Model):
@@ -35,6 +36,7 @@ class ReceiptProduct(models.Model):
     price = models.FloatField()
     sale = models.BooleanField()
     description = models.CharField(max_length=500, null=True, blank=True)
+    tax = models.BooleanField(default=True)
     owner = models.ForeignKey(User)
 
     def __str__(self):

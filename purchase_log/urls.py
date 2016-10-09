@@ -18,6 +18,11 @@ urlpatterns = [
     url(r'^receipts/delete_receipt_product/(?P<receipt_id>\d+)/(?P<pk>\d+)/$', views.delete_receipt_product,
         name="delete_receipt_product"),
 
+        # purchase_log/receipts/delete_receipt/receipt_id>
+    url(r'^receipts/delete_receipt/(?P<receipt_id>\d+)/$', views.delete_receipt,
+        name="delete_receipt"),
+
+
     # purchase_log/receipts/add_product_type>
     url(r'^receipts/add_product_type/(?P<receipt_id>\d+)/$', views.add_product_type, name='add_product_type'),
 
