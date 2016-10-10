@@ -15,4 +15,7 @@ urlpatterns = [
     
     # Registration page. 
     url(r'^register/$', views.register, name='register'),
+
+    # Friends List.
+    url(r'^friends/(?P<user_id>\d+)/$', views.friends, name='friends'),
 ]

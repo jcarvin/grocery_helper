@@ -1,8 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.contrib.auth import login, logout, authenticate
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import User
+
+from .forms import UserCreateForm
 
 
 def logout_view(request):
@@ -15,10 +17,10 @@ def register(request):
     """Register a new user."""
     if request.method != 'POST':
         # Display blank registration form.   
-        form = UserCreationForm()
+        form = UserCreateForm()
     else:
         # Process completed form.
-        form = UserCreationForm(data=request.POST)
+        form = UserCreateForm(data=request.POST)
         
         if form.is_valid():
             new_user = form.save()
@@ -30,3 +32,10 @@ def register(request):
 
     context = {'form': form}
     return render(request, 'users/register.html', context)
+
+def friends(request, user_id):
+    user = User.objects.get(id=user_id)
+    context = {
+        'user': user,
+    }
+    return render(request, 'users/friends.html', context)
