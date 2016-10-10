@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.core.urlresolvers import reverse
 from django.views import generic
@@ -14,7 +14,6 @@ def index(request):
 @login_required
 def receipts(request):
     receipt_list = []
-    item_list = []
     total_dict = {}
     for receipt in Receipt.objects.all():
         if receipt.owner == request.user:
@@ -29,7 +28,7 @@ def receipts(request):
 
 @login_required
 def receipt_details(request, receipt_id):
-    current_receipt = Receipt.objects.get(id=receipt_id)
+    current_receipt = get_object_or_404(Receipt, pk=receipt_id)
     if current_receipt.owner != request.user:
         raise Http404
     items = current_receipt.receiptproduct_set.all()
@@ -54,7 +53,7 @@ def receipt_details(request, receipt_id):
 
 @login_required
 def add_receipt_product(request, receipt_id):
-    current_receipt = Receipt.objects.get(id=receipt_id)
+    current_receipt = get_object_or_404(Receipt, pk=receipt_id)
     if current_receipt.owner != request.user:
         raise Http404
     if request.method != 'POST':
@@ -76,7 +75,7 @@ def add_receipt_product(request, receipt_id):
 
 @login_required
 def product_details(request, product_id):
-    current_product = Product.objects.get(id=product_id)
+    current_product = get_object_or_404(Product, pk=product_id)
     if current_product.owner != request.user:
         raise Http404
     purchase_list = [purchase for purchase in ReceiptProduct.objects.all().filter(product=current_product)]
@@ -141,14 +140,14 @@ def add_product_type(request, receipt_id):
 
 @login_required
 def delete_receipt_product(request, receipt_id, pk):
-    receipt_product = ReceiptProduct.objects.get(pk=pk)
+    receipt_product = get_object_or_404(ReceiptProduct, pk=pk)
     if receipt_product.owner == request.user:
         receipt_product.delete()
     return HttpResponseRedirect(reverse('purchase_log:receipt_details', args=[receipt_id]))
 
 @login_required
 def delete_receipt(request, receipt_id):
-    receipt = Receipt.objects.get(pk=receipt_id)
+    receipt = get_object_or_404(Receipt, pk=receipt_id)
     if receipt.owner == request.user:
         receipt.delete()
     return HttpResponseRedirect(reverse('purchase_log:receipts'))

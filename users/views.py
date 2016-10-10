@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.http import HttpResponseRedirect, HttpResponse
+from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.forms import User
@@ -34,8 +34,10 @@ def register(request):
     return render(request, 'users/register.html', context)
 
 def friends(request, user_id):
-    user = User.objects.get(id=user_id)
+    user = get_object_or_404(User, pk=user_id)
     context = {
         'user': user,
     }
     return render(request, 'users/friends.html', context)
+
+#def inbox(request, user_id):
