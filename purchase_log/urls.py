@@ -14,6 +14,10 @@ urlpatterns = [
     # purchase_log/receipts/add_receipt_product/<receipt_id>
     url(r'^receipts/add_receipt_product/(?P<receipt_id>\d+)/$', views.add_receipt_product, name='add_product'),
 
+    # purchase_log/receipts/edit_receipt_product/<receipt_id>
+    url(r'^receipts/edit_receipt_product/(?P<receipt_product_id>\d+)/$', views.edit_receipt_product,
+        name='edit_receipt_product'),
+
     # purchase_log/receipts/delete_receipt_product/<receipt_product_id>
     url(r'^receipts/delete_receipt_product/(?P<receipt_id>\d+)/(?P<pk>\d+)/$', views.delete_receipt_product,
         name="delete_receipt_product"),
@@ -22,6 +26,9 @@ urlpatterns = [
     url(r'^receipts/delete_receipt/(?P<receipt_id>\d+)/$', views.delete_receipt,
         name="delete_receipt"),
 
+    # purchase_log/receipts/edit_receipt/receipt_id>
+    url(r'^receipts/edit_receipt/(?P<receipt_id>\d+)/$', views.edit_receipt,
+        name="edit_receipt"),
 
     # purchase_log/receipts/add_product_type>
     url(r'^receipts/add_product_type/(?P<receipt_id>\d+)/$', views.add_product_type, name='add_product_type'),

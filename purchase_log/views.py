@@ -151,3 +151,45 @@ def delete_receipt(request, receipt_id):
     if receipt.owner == request.user:
         receipt.delete()
     return HttpResponseRedirect(reverse('purchase_log:receipts'))
+
+
+def edit_receipt_product(request, receipt_product_id):
+    """Edit an existing entry."""
+    item = ReceiptProduct.objects.get(id=receipt_product_id)
+    receipt = item.receipt
+    if item.owner != request.user:
+        raise Http404
+
+    if request.method != 'POST':
+        # Initial request; pre-fill form with the current entry.
+        form = AddItemForm(instance=item)
+    else:
+        # POST data submitted; process data.
+        form = AddItemForm(instance=item, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('purchase_log:receipt_details',
+                                        args=[receipt.id]))
+
+    context = {'item': item, 'receipt': receipt, 'form': form}
+    return render(request, 'purchase_log/edit_receipt_product.html', context)
+
+
+def edit_receipt(request, receipt_id):
+    """Edit an existing entry."""
+    receipt = Receipt.objects.get(id=receipt_id)
+    if receipt.owner != request.user:
+        raise Http404
+
+    if request.method != 'POST':
+        # Initial request; pre-fill form with the current entry.
+        form = AddReceiptForm(instance=receipt)
+    else:
+        # POST data submitted; process data.
+        form = AddReceiptForm(instance=receipt, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('purchase_log:receipts'))
+
+    context = {'receipt': receipt, 'form': form}
+    return render(request, 'purchase_log/edit_receipt.html', context)

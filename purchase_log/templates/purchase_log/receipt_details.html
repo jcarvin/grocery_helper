@@ -19,6 +19,8 @@
                 {% endif %}
                 <a href="{% url 'purchase_log:delete_receipt_product' receipt_id=product.receipt.pk pk=product.pk %}"
                    style="color: red">Delete</a>
+                <a href="{% url 'purchase_log:edit_receipt_product' product.id %}"
+                   style="color: blue">Edit</a>
             </li>
         </ul>
     {% endfor %}

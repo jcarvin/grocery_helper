@@ -3,8 +3,9 @@ from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.forms import User
+from friendship.models import Friend
 
-from .forms import UserCreateForm
+from .forms import UserCreateForm, UserSearch
 
 
 def logout_view(request):
@@ -33,11 +34,19 @@ def register(request):
     context = {'form': form}
     return render(request, 'users/register.html', context)
 
+
 def friends(request, user_id):
     user = get_object_or_404(User, pk=user_id)
+    friend_list = [friend for friend in Friend.objects.friends(request.user)]
     context = {
         'user': user,
+        'friend_list': friend_list,
     }
     return render(request, 'users/friends.html', context)
 
-#def inbox(request, user_id):
+
+def search_friends(request):
+    return HttpResponseRedirect(reverse('purchase_log:index'))
+
+
+# def inbox(request, user_id):

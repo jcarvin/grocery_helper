@@ -15,3 +15,7 @@ class UserCreateForm(UserCreationForm):
         if commit:
             user.save()
         return user
+
+
+class UserSearch(forms.Form):
+    user_search = forms.CharField(label='Search Users', max_length=250)
