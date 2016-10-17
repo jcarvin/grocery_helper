@@ -39,7 +39,7 @@ def receipt_details(request, receipt_id):
             description = item.description
     total = sum([item.price for item in items])
     taxed_items = [item.price for item in items if item.tax == True]
-    tax = (sum(taxed_items)*.07)
+    tax = (sum(taxed_items)*current_receipt.tax)
     total_and_tax = (total + tax)
     context = {
         'current_receipt': current_receipt,

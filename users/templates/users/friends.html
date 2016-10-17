@@ -3,21 +3,17 @@
 {% block body %}
 
     <h1>{{ user.username }}'s friends:</h1>
-
     {% for friend in friend_list %}
+
         {% if friend_list %}
             <ul>
                 <li>{{ friend.username }}</li>
             </ul>
         {% endif %}
     {% endfor %}
-
-    <form id="searchform" action="{% url 'users:search_friends' %}" method="get" accept-charset="utf-8">
-      <button class="searchbutton" type="submit">
-        <i class="fa fa-search">Add Friend</i>
-      </button>
-      <input class="searchfield" id="searchbox" name="q" type="text" placeholder="Search">
-    </form>
-
-
+    {% block form %}{% endblock %}
+    {% block button %}
+    <input type="button" onClick="window.location.href='{% url 'users:add_friend' %}'"
+       value="Add Friend"/>
+    {% endblock %}
 {% endblock %}

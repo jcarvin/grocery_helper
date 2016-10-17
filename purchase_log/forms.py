@@ -22,7 +22,6 @@ class AddReceiptForm(ModelForm):
         fields = ['store', 'date', 'tax']
 
 
-
 class AddStoreForm(ModelForm):
     class Meta:
         model = Store

@@ -20,5 +20,5 @@ urlpatterns = [
     url(r'^friends/(?P<user_id>\d+)/$', views.friends, name='friends'),
 
     # Search friends.
-    url(r'^search/$', views.search_friends, name='search_friends'),
+    url(r'^add_friend/$', views.add_friend, name='add_friend'),
 ]

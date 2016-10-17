@@ -1,0 +1,15 @@
+{% extends 'users/friends.html' %}
+
+
+{% block form %}
+        <form action="{% url 'users:add_friend' %}" method='post'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name='submit'>Add Friend</button>
+    </form>
+
+    {{ status_message }}
+{% endblock %}
+
+{% block button %}
+{% endblock %}
