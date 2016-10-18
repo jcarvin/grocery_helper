@@ -88,7 +88,8 @@ def inbox(request, user_id):
     unread_friend_request_list = [request for request in
                                   Friend.objects.unread_requests(user=request.user)]
     read_friend_request_list = [request for request in
-                                Friend.objects.unrejected_requests(user=request.user)]
+                                Friend.objects.unrejected_requests(user=request.user)
+                                if request not in unread_friend_request_list]
     context = {
         'unread_friend_request_list': unread_friend_request_list,
         'read_friend_request_list': read_friend_request_list,
@@ -119,3 +120,8 @@ def decline_request(request, f_request_id):
 
 def ignore_request(request, f_request_to_user_id):
     return HttpResponseRedirect(reverse('users:inbox', args=[request.user.id]))
+
+
+def delete_friend(request, friend_id):
+    Friend.objects.remove_friend(request.user, User.objects.get(id=friend_id))
+    return HttpResponseRedirect(reverse('users:friends', args=[request.user.id]))

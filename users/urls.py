@@ -36,4 +36,7 @@ urlpatterns = [
 
     # Ignore Request
     url(r'^ignore/(?P<f_request_to_user_id>\d+)/$', views.ignore_request, name='ignore_request'),
+
+    # Delete Friend
+    url(r'^Delete/(?P<friend_id>\d+)/$', views.delete_friend, name='delete_friend'),
 ]

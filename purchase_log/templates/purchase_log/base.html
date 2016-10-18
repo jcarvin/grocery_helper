@@ -67,7 +67,7 @@
                     {% if user.is_authenticated %}
                         <div class="dropdown">
                           <button class="btn btn-default dropdown-toggle" style="margin-top: 7px;color: darkgray;background-color: inherit;border-color: inherit" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Welcome {{ user.username }}!
+                            Welcome {{ user.username|title }}!
                             <span class="caret"></span>
                           </button>
                           <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">

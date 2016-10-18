@@ -2,12 +2,13 @@
 
 {% block body %}
 
-    <h1>{{ user.username }}'s friends:</h1>
+    <h1>{{ user.username|title }}'s friends:</h1>
     {% for friend in friend_list %}
 
         {% if friend_list %}
             <ul>
-                <li>{{ friend.username }}</li>
+                {{ friend.username|title }}
+                <a href="{% url 'users:delete_friend' friend.id %}" style="color: red">Delete</a>
             </ul>
         {% endif %}
     {% endfor %}
