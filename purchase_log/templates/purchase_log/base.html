@@ -71,7 +71,7 @@
                             <span class="caret"></span>
                           </button>
                           <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#">Inbox</a></li>
+                            <li><a href="{% url 'users:inbox' user.id %}">Inbox</a></li>
                             <li><a href="{% url 'users:friends' user.id %}">Friends</a></li>
                             <li><a href="#">Account Settings</a></li>
                             <li role="separator" class="divider"></li>

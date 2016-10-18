@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.forms import User
-from friendship.models import Friend
+from friendship.models import Friend, FriendshipRequest
 from django.contrib.auth.decorators import login_required
 
 from .forms import UserCreateForm, AddFriendForm
@@ -48,28 +48,14 @@ def friends(request, user_id):
 
 @login_required
 def add_friend(request):
-
-    def get_status_message(from_user, to_user):
-        for f_request in Friend.objects.unrejected_requests(user=from_user):
-            if f_request.to_user == to_user:
-                return 'You have already sent that user a request.'
-            # elif from_user.email == to_user.email:
-            #     return 'You cannot add yourself as a friend.'
-            # elif Friend.objects.are_friends(from_user, to_user):
-            #     return 'You are already friends with ' + to_user.username + '.'
-            # elif User.objects.filter(email=to_user.email).count() == 0:
-            #     return 'No user with that email.'
-            else:
-                return 'Friend request sent!'
-
     if request.method != 'POST':
         # No data submitted; create a blank form.
         form = AddFriendForm
-        status_message = 'test'
+        status_message = ''
     else:
         # POST data submitted; process data.
         form = AddFriendForm(data=request.POST)
-        status_message = 'test'
+        status_message = ''
         if form.is_valid():
             email = form.cleaned_data.get('email')
             if email not in [user.email for user in User.objects.all()]:
@@ -98,4 +84,38 @@ def add_friend(request):
     return render(request, 'users/add_friend_form.html', context)
 
 
-# def inbox(request, user_id):
+def inbox(request, user_id):
+    unread_friend_request_list = [request for request in
+                                  Friend.objects.unread_requests(user=request.user)]
+    read_friend_request_list = [request for request in
+                                Friend.objects.unrejected_requests(user=request.user)]
+    context = {
+        'unread_friend_request_list': unread_friend_request_list,
+        'read_friend_request_list': read_friend_request_list,
+    }
+    return render(request, 'users/inbox.html', context)
+
+
+def request_details(request, f_request_id):
+    f_request = FriendshipRequest.objects.get(pk=f_request_id)
+    f_request.mark_viewed()
+    context = {
+        'f_request': f_request,
+    }
+    return render(request, 'users/f_request_details.html', context)
+
+
+def accept_request(request, f_request_id):
+    f_request = FriendshipRequest.objects.get(pk=f_request_id)
+    f_request.accept()
+    return HttpResponseRedirect(reverse('users:inbox', args=[request.user.id]))
+
+
+def decline_request(request, f_request_id):
+    f_request = FriendshipRequest.objects.get(pk=f_request_id)
+    f_request.reject()
+    return HttpResponseRedirect(reverse('users:inbox', args=[request.user.id]))
+
+
+def ignore_request(request, f_request_to_user_id):
+    return HttpResponseRedirect(reverse('users:inbox', args=[request.user.id]))

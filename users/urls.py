@@ -21,4 +21,19 @@ urlpatterns = [
 
     # Search friends.
     url(r'^add_friend/$', views.add_friend, name='add_friend'),
+
+    # Inbox: /users/inbox/<user.id>
+    url(r'^inbox/(?P<user_id>\d+)/$', views.inbox, name='inbox'),
+
+    # Friend Request Details
+    url(r'^request/(?P<f_request_id>\d+)/$', views.request_details, name='request_details'),
+
+    # Accept Request
+    url(r'^accept/(?P<f_request_id>\d+)/$', views.accept_request, name='accept_request'),
+
+    # Decline Request
+    url(r'^decline/(?P<f_request_id>\d+)/$', views.decline_request, name='decline_request'),
+
+    # Ignore Request
+    url(r'^ignore/(?P<f_request_to_user_id>\d+)/$', views.ignore_request, name='ignore_request'),
 ]
