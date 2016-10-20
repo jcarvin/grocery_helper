@@ -2,11 +2,11 @@
 
 
 {% block form %}
-        <form action="{% url 'users:add_friend' %}" method='post'>
+<form action="{% url 'users:add_friend' %}" method='post'>
     {% csrf_token %}
     {{ form.as_p }}
     <button name='submit'>Add Friend</button>
-    </form>
+</form>
 
     {{ status_message }}
 {% endblock %}
