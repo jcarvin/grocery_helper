@@ -25,6 +25,7 @@ class Receipt(models.Model):
     date = models.DateField()
     owner = models.ForeignKey(User)
     tax = models.FloatField()
+    split = models.BooleanField(default=False)
 
     def __str__(self):
         return self.store.name + ': ' + str(self.date)
@@ -38,8 +39,15 @@ class ReceiptProduct(models.Model):
     description = models.CharField(max_length=500, null=True, blank=True)
     tax = models.BooleanField(default=True)
     owner = models.ForeignKey(User)
+    split = models.BooleanField(default=False)
 
     def __str__(self):
         return self.product.type
 
 
+class ShareItem(models.Model):
+    receipt_product = models.ForeignKey(ReceiptProduct, null=True, blank=True)
+    purchasers = models.ForeignKey(User, null=True, blank=True)
+
+    def __str__(self):
+        return (self.receipt_product.product + '; ' + person for person in self.purchasers)

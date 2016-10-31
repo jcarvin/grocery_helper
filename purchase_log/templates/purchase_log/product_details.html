@@ -10,7 +10,8 @@
     {% for purchase in purchase_list %}
         <ul>
             <li>
-                ${{ purchase.price }} - {{ purchase.receipt }}
+                ${{ purchase.price }} - <a href="{% url 'purchase_log:receipt_details' purchase.receipt.id %}">
+                    {{ purchase.receipt }}</a>
             </li>
         </ul>
     {% endfor %}

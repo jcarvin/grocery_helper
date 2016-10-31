@@ -5,6 +5,8 @@
 <form action="{% url 'purchase_log:add_product' current_receipt.id %}" method='post'>
     {% csrf_token %}
     {{ form.as_p }}
+    {{ formset.management_form }}
+    {% if current_receipt.split == True %}{{ formset.as_p }}{% endif %}
     <button name='submit'>Submit</button>
     <input type="button" onClick="window.location.href='{% url 'purchase_log:add_product_type' current_receipt.id %}'"
                value="Add Product Type"/>

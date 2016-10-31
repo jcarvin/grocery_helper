@@ -2,9 +2,12 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.core.urlresolvers import reverse
 from django.views import generic
-from .models import Store, Product, ReceiptProduct, Receipt
-from .forms import AddItemForm, AddReceiptForm, AddStoreForm, AddProductForm
+from .models import Store, Product, ReceiptProduct, Receipt, ShareItem
+from .forms import AddItemForm, AddSplitItemForm, AddReceiptForm, AddStoreForm, AddProductForm, ShareItemForm
 from django.contrib.auth.decorators import login_required
+from django.forms.formsets import formset_factory
+from django.forms import modelformset_factory
+from functools import partial, wraps
 
 
 def index(request):
@@ -53,23 +56,39 @@ def receipt_details(request, receipt_id):
 
 @login_required
 def add_receipt_product(request, receipt_id):
+    ShareItemFormSet = formset_factory(wraps(ShareItemForm)(partial(ShareItemForm, user=request.user)), extra=3)
     current_receipt = get_object_or_404(Receipt, pk=receipt_id)
     if current_receipt.owner != request.user:
         raise Http404
     if request.method != 'POST':
-        # No data submitted; create a blank form.
-        form = AddItemForm(initial={'receipt': current_receipt})
+        if current_receipt.split:
+            # No data submitted; create a blank form.
+            form = AddSplitItemForm(user=request.user, initial={'split': True, 'receipt': current_receipt})
+        else:
+            form = AddItemForm(user=request.user, initial={'receipt': current_receipt})
+        formset = ShareItemFormSet()
     else:
         # POST data submitted; process data.
-        form = AddItemForm(data=request.POST)
-        if form.is_valid():
+        form = AddItemForm(user=request.user, data=request.POST)
+        formset = ShareItemFormSet(request.POST)
+        share_item_form = ShareItemForm(user=request.user)
+        if all([form.is_valid(), formset.is_valid()]):
             new_product = form.save(commit=False)
             new_product.owner = request.user
             new_product.receipt = current_receipt
             new_product.save()
+            initial_purchaser = share_item_form.save(commit=False)
+            initial_purchaser.receipt_product = new_product
+            initial_purchaser.purchasers = request.user
+            initial_purchaser.save()
+            for inline_form in formset:
+                if inline_form.cleaned_data:
+                    share_item = inline_form.save(commit=False)
+                    share_item.receipt_product = ReceiptProduct.objects.get(id=new_product.id)
+                    share_item.save()
             return HttpResponseRedirect(reverse('purchase_log:receipt_details', args=[receipt_id]))
 
-    context = {'current_receipt': current_receipt, 'form': form}
+    context = {'current_receipt': current_receipt, 'form': form, 'formset': formset}
     return render(request, 'purchase_log/add_receipt_product_form.html', context)
 
 
@@ -87,10 +106,10 @@ def product_details(request, product_id):
 def add_receipt(request):
     if request.method != 'POST':
         # No data submitted; create a blank form.
-        form = AddReceiptForm
+        form = AddReceiptForm(user=request.user, initial={'tax': 0.00})
     else:
         # POST data submitted; process data.
-        form = AddReceiptForm(data=request.POST)
+        form = AddReceiptForm(user=request.user, data=request.POST)
         if form.is_valid():
             new_receipt = form.save(commit=False)
             new_receipt.owner = request.user
@@ -162,10 +181,10 @@ def edit_receipt_product(request, receipt_product_id):
 
     if request.method != 'POST':
         # Initial request; pre-fill form with the current entry.
-        form = AddItemForm(instance=item)
+        form = AddItemForm(user=request.user, instance=item)
     else:
         # POST data submitted; process data.
-        form = AddItemForm(instance=item, data=request.POST)
+        form = AddItemForm(user=request.user, instance=item, data=request.POST)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect(reverse('purchase_log:receipt_details',
@@ -173,6 +192,37 @@ def edit_receipt_product(request, receipt_product_id):
 
     context = {'item': item, 'receipt': receipt, 'form': form}
     return render(request, 'purchase_log/edit_receipt_product.html', context)
+
+
+def edit_split_receipt_product(request, receipt_product_id):
+    """Edit an existing entry."""
+    item = ReceiptProduct.objects.get(id=receipt_product_id)
+    receipt = item.receipt
+    share_item = ShareItem.objects.filter(receipt_product=item)
+    ShareItemFormSet = modelformset_factory(ShareItem, fields=('purchasers',))
+    if item.owner != request.user:
+        raise Http404
+
+    if request.method != 'POST':
+        # Initial request; pre-fill form with the current entry.
+        form = AddSplitItemForm(user=request.user, instance=item)
+        formset = ShareItemFormSet()
+    else:
+        # POST data submitted; process data.
+        form = AddSplitItemForm(user=request.user, instance=item, data=request.POST)
+        formset = ShareItemFormSet(request.POST)
+        if all([form.is_valid(), formset.is_valid()]):
+            form.save()
+            for inline_form in formset:
+                if inline_form.cleaned_data:
+                    share_item = inline_form.save(commit=False)
+                    share_item.receipt_product = ReceiptProduct.objects.get(id=item.id)
+                    share_item.save()
+            return HttpResponseRedirect(reverse('purchase_log:receipt_details',
+                                        args=[receipt.id]))
+
+    context = {'item': item, 'receipt': receipt, 'form': form, 'formset': formset}
+    return render(request, 'purchase_log/edit_split_receipt_product.html', context)
 
 
 def edit_receipt(request, receipt_id):
@@ -183,10 +233,10 @@ def edit_receipt(request, receipt_id):
 
     if request.method != 'POST':
         # Initial request; pre-fill form with the current entry.
-        form = AddReceiptForm(instance=receipt)
+        form = AddReceiptForm(user=request.user, instance=receipt)
     else:
         # POST data submitted; process data.
-        form = AddReceiptForm(instance=receipt, data=request.POST)
+        form = AddReceiptForm(user=request.user, instance=receipt, data=request.POST)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect(reverse('purchase_log:receipts'))
