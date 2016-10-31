@@ -8,6 +8,7 @@ from django.contrib.auth.decorators import login_required
 from django.forms.formsets import formset_factory
 from django.forms import modelformset_factory
 from functools import partial, wraps
+from django.utils.functional import curry
 
 
 def index(request):
@@ -199,14 +200,15 @@ def edit_split_receipt_product(request, receipt_product_id):
     item = ReceiptProduct.objects.get(id=receipt_product_id)
     receipt = item.receipt
     share_item = ShareItem.objects.filter(receipt_product=item)
-    ShareItemFormSet = modelformset_factory(ShareItem, fields=('purchasers',))
-    if item.owner != request.user:
+    ShareItemFormSet = modelformset_factory(ShareItem, form=ShareItemForm)
+    ShareItemFormSet.form = staticmethod(curry(ShareItemForm, user=request.user))  # <-This confused the shit out of me.
+    if item.owner != request.user:                                                 # But it worked.
         raise Http404
 
     if request.method != 'POST':
         # Initial request; pre-fill form with the current entry.
         form = AddSplitItemForm(user=request.user, instance=item)
-        formset = ShareItemFormSet()
+        formset = ShareItemFormSet(queryset=share_item)
     else:
         # POST data submitted; process data.
         form = AddSplitItemForm(user=request.user, instance=item, data=request.POST)
