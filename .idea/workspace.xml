@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b6871be1-c29c-4010-a915-3413edb2b309" name="Default" comment="Can now delete friendships. =[">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/purchase_log/templates/purchase_log/edit_split_receipt_product.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grocery_helper/__init__.py" afterPath="$PROJECT_DIR$/grocery_helper/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/purchase_log/templates/purchase_log/add_receipt_product_form.html" afterPath="$PROJECT_DIR$/purchase_log/templates/purchase_log/add_receipt_product_form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/purchase_log/forms.py" afterPath="$PROJECT_DIR$/purchase_log/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/purchase_log/models.py" afterPath="$PROJECT_DIR$/purchase_log/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/purchase_log/templates/purchase_log/product_details.html" afterPath="$PROJECT_DIR$/purchase_log/templates/purchase_log/product_details.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/purchase_log/templates/purchase_log/receipt_details.html" afterPath="$PROJECT_DIR$/purchase_log/templates/purchase_log/receipt_details.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/purchase_log/urls.py" afterPath="$PROJECT_DIR$/purchase_log/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/purchase_log/views.py" afterPath="$PROJECT_DIR$/purchase_log/views.py" />
+    <list default="true" id="b6871be1-c29c-4010-a915-3413edb2b309" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="grocery_helper.iws" />
@@ -672,7 +662,13 @@
       <option name="project" value="LOCAL" />
       <updated>1476990273838</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Created share items join table to split the cost of items. &#10;Automatically creates a share item associated with the current user at the creation of a new receipt product. &#10;Formset added to the receipt product creation page under receipt that are 'split'.">
+      <created>1477938340324</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1477938340324</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -697,10 +693,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="1" width="1364" height="726" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32996634" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32996634" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3267974" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294509" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -713,7 +710,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -752,7 +748,8 @@
     <MESSAGE value="Users can now accept decline and ignore friend requests." />
     <MESSAGE value="Can now delete friendships. =[" />
     <MESSAGE value="Changed some indentation on add_friend_form.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed some indentation on add_friend_form.html" />
+    <MESSAGE value="Created share items join table to split the cost of items. &#10;Automatically creates a share item associated with the current user at the creation of a new receipt product. &#10;Formset added to the receipt product creation page under receipt that are 'split'." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created share items join table to split the cost of items. &#10;Automatically creates a share item associated with the current user at the creation of a new receipt product. &#10;Formset added to the receipt product creation page under receipt that are 'split'." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1075,6 +1072,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="391">
           <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
