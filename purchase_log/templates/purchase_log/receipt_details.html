@@ -1,7 +1,8 @@
-{% extends 'purchase_log/base.html' %}
+{% extends 'purchase_log/receipts.html' %}
 {% block title %}{{ current_receipt }}{% endblock %}
 
-{% block body %}
+{% block receipt %}
+  <div class="receipt">
     <h1>{{ current_receipt.store.name }}</h1>
     <h3>{{ current_receipt.date }}</h3>
 
@@ -9,6 +10,7 @@
         <ul>
             <li>
                 <a href="{% url 'purchase_log:product_details' product.product.id %}">
+                    {% if product.split %}<i class="fa fa-user-plus" aria-hidden="true"></i>{% endif %}
                     {{ product.product }}</a>: ${{ product.price }}
                 {% if product.description %}
                     {{ product.description }}
@@ -29,10 +31,12 @@
             </li>
         </ul>
     {% endfor %}
-    {% block form %}{% endblock %}
+
+    {% block item_form %}{% endblock %}
     {% block button %}
-    <input type="button" onClick="window.location.href='{% url 'purchase_log:add_product' current_receipt.id %}'"
+    <input style="background-color: #6a8000;border-color: forestgreen;color: #000000" class="btn btn-primary" type="button" onClick="window.location.href='{% url 'purchase_log:add_product' current_receipt.id %}'"
            value="Add item"/>
+  </div>
     {% endblock %}
     <h5>Sub Total: ${{ total }}</h5>
     <h5>Tax: ${{ tax }}</h5>

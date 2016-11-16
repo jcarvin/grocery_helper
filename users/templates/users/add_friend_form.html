@@ -5,7 +5,7 @@
 <form action="{% url 'users:add_friend' %}" method='post'>
     {% csrf_token %}
     {{ form.as_p }}
-    <button name='submit'>Add Friend</button>
+    <button style="background-color: #6a8000;border-color: forestgreen;color: #000000" class="btn btn-primary" name='submit'>Add Friend</button>
 </form>
 
     {{ status_message }}

@@ -5,8 +5,8 @@
   <form method="post" action="{% url 'users:register' %}">
     {% csrf_token %}
     {{ form.as_p }}
-        
-    <button name="submit">register</button>
+
+    <button style="background-color: #6a8000;border-color: forestgreen;color: #000000" class="btn btn-primary" name="submit">register</button>
     <input type="hidden" name="next"
       value="{% url 'purchase_log:index' %}" />
   </form>

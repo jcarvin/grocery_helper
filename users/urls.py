@@ -25,6 +25,15 @@ urlpatterns = [
     # Inbox: /users/inbox/<user.id>
     url(r'^inbox/(?P<user_id>\d+)/$', views.inbox, name='inbox'),
 
+    # Message Details: /users/inbox/<user.id>
+    url(r'^message_details/(?P<message_id>\d+)/$', views.message_details, name='message_details'),
+
+    # Sent Messages: /users/sent_messages/<user.id>
+    url(r'^sent_messages/(?P<user_id>\d+)/$', views.sent_messages, name='sent_messages'),
+
+    # Friend Requests: /users/firned_requests/<user.id>
+    url(r'^friend_requests/(?P<user_id>\d+)/$', views.friend_requests, name='friend_requests'),
+
     # Friend Request Details
     url(r'^request/(?P<f_request_id>\d+)/$', views.request_details, name='request_details'),
 
@@ -39,4 +48,7 @@ urlpatterns = [
 
     # Delete Friend
     url(r'^Delete/(?P<friend_id>\d+)/$', views.delete_friend, name='delete_friend'),
+
+    # Make Message
+    url(r'^make_message/(?P<user_id>\d+)/$', views.make_message, name='make_message'),
 ]

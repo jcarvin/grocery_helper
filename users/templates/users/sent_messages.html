@@ -1,6 +1,6 @@
 {% extends 'users/inbox_base.html' %}
 
-{% block inbox_active %}active{% endblock %}
+{% block sent_active %}active{% endblock %}
 
 
 {% block sub_body %}
@@ -8,9 +8,8 @@
   {% for message in message_list %}
     <ul class="nav nav-tabs" style="margin-bottom: 15px;">
       <li>
-        {% if message.read == False %}<i class="fa fa-star" style="color: #ffff00"> NEW</i>{% endif %}
         <a href="{% url 'users:message_details' message.id %}">
-          From: {{ message.from_user }} - {{ message.subj }}
+          To: {{ message.to_user }} - {{ message.subj }}
         </a>
       </li>
     </ul>

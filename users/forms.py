@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.forms import ModelForm
+from .models import Message
 
 
 class UserCreateForm(UserCreationForm):
@@ -38,3 +39,15 @@ class AddFriendForm(forms.Form):
             raise forms.ValidationError(u'No user with that email.')
         else:
             return email
+
+
+class MakeMessageForm(ModelForm):
+    class Meta:
+        model = Message
+        fields = ['to_user',
+                  'subj',
+                  'text',
+                  ]
+        widgets = {
+            'text': forms.Textarea()
+                }

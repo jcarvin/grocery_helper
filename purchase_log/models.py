@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.contrib.admin.widgets import AdminDateWidget
 
 
 class Store(models.Model):
@@ -26,6 +25,7 @@ class Receipt(models.Model):
     owner = models.ForeignKey(User)
     tax = models.FloatField()
     split = models.BooleanField(default=False)
+    pic = models.ImageField(null=True, blank=True)
 
     def __str__(self):
         return self.store.name + ': ' + str(self.date)

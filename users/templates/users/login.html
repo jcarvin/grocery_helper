@@ -12,12 +12,12 @@
     {% bootstrap_form form %}
 
     {% buttons %}
-      <button name="submit" class="btn btn-primary">log in</button>
+      <button style="background-color: #6a8000;border-color: forestgreen;color: #000000" name="submit" class="btn btn-primary">log in</button>
     {% endbuttons %}
 
     <input type="hidden" name="next" value="{% url 'purchase_log:index' %}" />
   </form>
-  <button name='register' class="btn btn-primary" onClick="window.location.href='{% url 'users:register' %}'">register</button>
+  <button style="background-color: #6a8000;border-color: forestgreen;color: #000000" name='register' class="btn btn-primary" onClick="window.location.href='{% url 'users:register' %}'">register</button>
 
     
 {% endblock %}

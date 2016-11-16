@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from friendship.models import Friend
 
 
+
 from .models import Receipt, ReceiptProduct, Product, Store, ShareItem
 
 
@@ -61,7 +62,13 @@ class AddReceiptForm(ModelForm):
 
     class Meta:
         model = Receipt
-        fields = ['store', 'date', 'split', 'tax']
+        fields = [
+            'store',
+            'date',
+            'split',
+            'tax',
+            'pic'
+        ]
 
 
 class AddStoreForm(ModelForm):

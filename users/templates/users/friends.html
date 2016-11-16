@@ -9,12 +9,13 @@
             <ul>
                 {{ friend.username|title }}
                 <a href="{% url 'users:delete_friend' friend.id %}" style="color: red">Delete</a>
+                <a href="{% url 'users:make_message' user.id %}" style="color: #97136a">Message</a>
             </ul>
         {% endif %}
     {% endfor %}
     {% block form %}{% endblock %}
     {% block button %}
-    <input type="button" onClick="window.location.href='{% url 'users:add_friend' %}'"
+    <input style="background-color: #6a8000;border-color: forestgreen;color: #000000" class="btn btn-primary" type="button" onClick="window.location.href='{% url 'users:add_friend' %}'"
        value="Add Friend"/>
     {% endblock %}
 {% endblock %}

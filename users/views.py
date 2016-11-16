@@ -1,12 +1,52 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse, Http404
 from django.core.urlresolvers import reverse
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.forms import User
 from friendship.models import Friend, FriendshipRequest
 from django.contrib.auth.decorators import login_required
 
-from .forms import UserCreateForm, AddFriendForm
+from .forms import UserCreateForm, AddFriendForm, MakeMessageForm
+from .models import Message
+from purchase_log.models import Receipt
+
+def get_common_context(user, receipt_id=None):
+    # Retrieves commonly re-used data for certain views.
+    common_context = {}
+    receipt_list = []  # Always in common_context
+    total_dict = {}  # Always in common_context
+    new_messages = [message for message in Message.objects.filter(to_user=user) if message.read is False]
+    num_of_new_messages = len(new_messages)
+    common_context['num_of_new_messages'] = num_of_new_messages
+    for receipt in Receipt.objects.all():
+        if receipt.owner == user:
+            receipt_list.append(receipt)
+            temp_list = [item.price for item in receipt.receiptproduct_set.all()]
+            taxed_items = [item.price for item in receipt.receiptproduct_set.all() if item.tax == True]
+            total_dict[receipt.id] = format(((sum(taxed_items)*receipt.tax)+(sum(temp_list))), '.2f')
+            common_context["total_dict"] = total_dict
+            common_context["receipt_list"] = receipt_list
+    if receipt_id:
+        # only
+        current_receipt = get_object_or_404(Receipt, pk=receipt_id)
+        if current_receipt.owner != user:
+            raise Http404
+        items = current_receipt.receiptproduct_set.all()
+        for item in items:
+            if item.description == 'None':
+                description = ''
+            else:
+                description = item.description
+        total = sum([item.price for item in items])
+        taxed_items = [item.price for item in items if item.tax == True]
+        tax = (sum(taxed_items)*current_receipt.tax)
+        total_and_tax = (total + tax)
+        common_context['total'] = ("%.2f" % total)
+        common_context['tax'] = ("%.2f" % tax)
+        common_context['current_receipt'] = current_receipt
+        common_context['items'] = items
+        common_context['total_and_tax'] = ("%.2f" % total_and_tax)
+    return common_context
 
 
 def logout_view(request):
@@ -43,6 +83,9 @@ def friends(request, user_id):
         'user': user,
         'friend_list': friend_list,
     }
+    common_context = get_common_context(request.user)
+    for key, value in common_context.items():
+        context[key] = value
     return render(request, 'users/friends.html', context)
 
 
@@ -81,20 +124,68 @@ def add_friend(request):
                 other_user,                                 # The recipient
                 message='Hi! I would like to add you')
     context = {'form': form, 'status_message': status_message}
+    common_context = get_common_context(request.user)
+    for key, value in common_context.items():
+        context[key] = value
     return render(request, 'users/add_friend_form.html', context)
 
 
 def inbox(request, user_id):
-    unread_friend_request_list = [request for request in
-                                  Friend.objects.unread_requests(user=request.user)]
-    read_friend_request_list = [request for request in
-                                Friend.objects.unrejected_requests(user=request.user)
-                                if request not in unread_friend_request_list]
+    message_list = [message for message in Message.objects.filter(to_user=User.objects.get(pk=user_id))]
     context = {
-        'unread_friend_request_list': unread_friend_request_list,
-        'read_friend_request_list': read_friend_request_list,
+        'message_list': message_list
     }
+    common_context = get_common_context(request.user)
+    for key, value in common_context.items():
+        context[key] = value
     return render(request, 'users/inbox.html', context)
+
+
+def sent_messages(request, user_id):
+    if User.objects.get(pk=user_id) != request.user:
+        raise Http404
+    else:
+        message_list = [message for message in Message.objects.filter(from_user=User.objects.get(pk=user_id))]
+        context = {
+            'message_list': message_list
+        }
+        common_context = get_common_context(request.user)
+        for key, value in common_context.items():
+            context[key] = value
+        return render(request, 'users/sent_messages.html', context)
+
+
+def message_details(request, message_id):
+    message = Message.objects.read_message(message_id)
+    context = {
+        'message': message,
+        'user': request.user,
+    }
+    common_context = get_common_context(request.user)
+    for key, value in common_context.items():
+        context[key] = value
+    return render(request, 'users/message_details.html', context)
+
+
+@login_required
+def friend_requests(request, user_id):
+    user = User.objects.get(pk=user_id)
+    if user != request.user:
+        raise Http404
+    else:
+        unread_friend_request_list = [request for request in
+                                      Friend.objects.unread_requests(user=request.user)]
+        read_friend_request_list = [request for request in
+                                    Friend.objects.unrejected_requests(user=request.user)
+                                    if request not in unread_friend_request_list]
+    context = {
+    'unread_friend_request_list': unread_friend_request_list,
+    'read_friend_request_list': read_friend_request_list,
+    }
+    common_context = get_common_context(request.user)
+    for key, value in common_context.items():
+        context[key] = value
+    return render(request, 'users/friend_request.html', context)
 
 
 def request_details(request, f_request_id):
@@ -103,6 +194,9 @@ def request_details(request, f_request_id):
     context = {
         'f_request': f_request,
     }
+    common_context = get_common_context(request.user)
+    for key, value in common_context.items():
+        context[key] = value
     return render(request, 'users/f_request_details.html', context)
 
 
@@ -125,3 +219,35 @@ def ignore_request(request, f_request_to_user_id):
 def delete_friend(request, friend_id):
     Friend.objects.remove_friend(request.user, User.objects.get(id=friend_id))
     return HttpResponseRedirect(reverse('users:friends', args=[request.user.id]))
+
+
+@login_required
+def make_message(request, user_id):
+    user = User.objects.get(pk=user_id)
+    if user != request.user:
+        raise Http404
+    else:
+        friend_list = [friend for friend in Friend.objects.friends(request.user)]
+        if request.method != 'POST':
+            # No data submitted; create a blank form.
+            form = MakeMessageForm
+            status_message = ''
+        else:
+            form = MakeMessageForm(data=request.POST)
+            status_message = ''
+            if form.is_valid():
+                new_message = form.save(commit=False)
+                new_message.from_user = request.user
+                new_message.to_user.is_authenticated()
+                if new_message.to_user not in friend_list:
+                    status_message = 'That user is not in your friends list.'
+                else:
+                    new_message.save()
+                    status_message += 'Message Sent!'
+                    return HttpResponseRedirect(reverse('users:inbox', args=[request.user.pk]))
+
+    context = {'form': form, 'status_message': status_message}
+    common_context = get_common_context(request.user)
+    for key, value in common_context.items():
+        context[key] = value
+    return render(request, 'users/make_message.html', context)

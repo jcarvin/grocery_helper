@@ -1,0 +1,26 @@
+{% extends 'users/inbox_base.html' %}
+
+{% block requests_active %}active{% endblock %}
+
+{% block sub_body %}
+  <a href="{% url 'users:add_friend' %}"><i class="fa fa-plus" style="color: #22bc07"> Add Friend</i></a>
+  {% if unread_friend_request_list %}<h1>Unread Friend Requests</h1>{% endif %}
+  {% for f_request in unread_friend_request_list %}
+    <ul class="nav nav-tabs" style="margin-bottom: 15px;">
+      <li>
+        <a href="{% url 'users:request_details' f_request.id %}" data-toggle="tab">{{ f_request.from_user|title }}
+          wants to add you as a friend.</a>
+      </li>
+    </ul>
+  {% endfor %}
+
+  {% if read_friend_request_list %}<h1>Read Friend Requests</h1>{% endif %}
+  {%for f_request in read_friend_request_list %}
+    <ul>
+      <li>
+        <a href="{% url 'users:request_details' f_request.id %}" data-toggle="tab">{{ f_request.from_user|title }}
+          wants to add you as a friend.</a>
+      </li>
+    </ul>
+  {% endfor %}
+{% endblock %}

@@ -1,12 +1,51 @@
 {% extends 'purchase_log/receipt_details.html' %}
 
+{% block title %}{{ current_receipt }}{% endblock %}
 
-{% block form %}
+{% block receipt %}
+  <div class="receipt">
+    <h1>{{ current_receipt.store.name }}</h1>
+    <h3>{{ current_receipt.date }}</h3>
+
+    {% for product in current_receipt.receiptproduct_set.all %}
+        <ul>
+            <li>
+                <a href="{% url 'purchase_log:product_details' product.product.id %}">
+                    {{ product.product }}</a>: ${{ product.price }}
+                {% if product.description %}
+                    {{ product.description }}
+                {% endif %}
+
+                {% if product.sale == True %}
+                    <font color = green>Sale!</font>
+                {% endif %}
+                <a href="{% url 'purchase_log:delete_receipt_product' receipt_id=product.receipt.pk pk=product.pk %}"
+                   style="color: red">Delete</a>
+                {% if product.split == True %}
+                    <a href="{% url 'purchase_log:edit_split_receipt_product' product.id %}"
+                       style="color: blue">Edit</a>
+                {% else %}
+                    <a href="{% url 'purchase_log:edit_receipt_product' product.id %}"
+                       style="color: blue">Edit</a>
+                {% endif %}
+            </li>
+        </ul>
+    {% endfor %}
+    {% block item_form %}
         <form action="{% url 'purchase_log:edit_receipt_product' item.id %}" method='post'>
             {% csrf_token %}
             {{ form.as_p }}
-            <button name="submit">save changes</button>
+            <button style="background-color: #6a8000;border-color: forestgreen;color: #000000" class="btn btn-primary" name="submit">save changes</button>
         </form>
+    {% endblock %}
+    {% block button %}
+    <input style="background-color: #6a8000;border-color: forestgreen;color: #000000" class="btn btn-primary" type="button" onClick="window.location.href='{% url 'purchase_log:add_product' current_receipt.id %}'"
+           value="Add item"/>
+  </div>
+    {% endblock %}
+    <h5>Sub Total: ${{ total }}</h5>
+    <h5>Tax: ${{ tax }}</h5>
+    <h4>Total: ${{ total_and_tax }}</h4>
 {% endblock %}
 
-{% block button %}{% endblock %}
+

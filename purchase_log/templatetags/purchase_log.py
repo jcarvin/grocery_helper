@@ -4,6 +4,8 @@ from django import template
 
 register = template.Library()
 
+# used in receipts.html to extract totals
+
 
 @register.filter
 def get_item(dictionary, key):

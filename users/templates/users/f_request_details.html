@@ -4,11 +4,11 @@
 
     {{ f_request.from_user|title }} would like to add you as a friend.
 
-    <input type="button" onClick="window.location.href='{% url 'users:accept_request' f_request.id %}'"
+    <input style="background-color: #6a8000;border-color: forestgreen;color: #000000" class="btn btn-primary" type="button" onClick="window.location.href='{% url 'users:accept_request' f_request.id %}'"
            value="Accept"/>
-    <input type="button" onClick="window.location.href='{% url 'users:decline_request' f_request.id %}'"
+    <input style="background-color: #6a8000;border-color: forestgreen;color: #000000" class="btn btn-primary" type="button" onClick="window.location.href='{% url 'users:decline_request' f_request.id %}'"
            value="Decline"/>
-    <input type="button" onClick="window.location.href='{% url 'users:ignore_request' f_request.from_user_id %}'"
+    <input style="background-color: #6a8000;border-color: forestgreen;color: #000000" class="btn btn-primary" type="button" onClick="window.location.href='{% url 'users:ignore_request' f_request.from_user_id %}'"
            value="Ignore"/>
 
 {% endblock %}
