@@ -1,0 +1,19 @@
+{% extends 'purchase_log/base.html' %}
+
+{% block body %}
+<div class="col-lg-4">
+  <div class="bs-example">
+    <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
+      <li class="{% block inbox_active %}{% endblock %}"><a href="{% url 'users:inbox' user.id %}">Inbox</a></li>
+      <li class="{% block sent_active %}{% endblock %}"><a href="{% url 'users:sent_messages' user.id %}">Sent Messages</a></li>
+      <li class="{% block requests_active %}{% endblock %}"><a href="{% url 'users:friend_requests' user.id %}">Friend Requests</a></li>
+    </ul>
+  </div>
+</div>
+<div class="col-lg-6">
+  <div class="well well-lg">
+    {% block sub_body %}
+    {% endblock %}
+  </div>
+</div>
+{% endblock %}
