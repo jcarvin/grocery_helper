@@ -2,39 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6871be1-c29c-4010-a915-3413edb2b309" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/users/templates/users/friend_request.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/finances/templates/finances/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/users/templates/users/make_message.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/users/templates/users/message_details.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/users/templates/users/sent_messages.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/finances/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/users/templates/users/add_friend_form.html" afterPath="$PROJECT_DIR$/users/templates/users/add_friend_form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/purchase_log/templates/purchase_log/add_product_type_form.html" afterPath="$PROJECT_DIR$/purchase_log/templates/purchase_log/add_product_type_form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/purchase_log/templates/purchase_log/add_receipt_form.html" afterPath="$PROJECT_DIR$/purchase_log/templates/purchase_log/add_receipt_form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/purchase_log/templates/purchase_log/add_receipt_product_form.html" afterPath="$PROJECT_DIR$/purchase_log/templates/purchase_log/add_receipt_product_form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/purchase_log/templates/purchase_log/add_store_form.html" afterPath="$PROJECT_DIR$/purchase_log/templates/purchase_log/add_store_form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/purchase_log/templates/purchase_log/base.html" afterPath="$PROJECT_DIR$/purchase_log/templates/purchase_log/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/purchase_log/templates/purchase_log/edit_receipt.html" afterPath="$PROJECT_DIR$/purchase_log/templates/purchase_log/edit_receipt.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/purchase_log/templates/purchase_log/edit_receipt_product.html" afterPath="$PROJECT_DIR$/purchase_log/templates/purchase_log/edit_receipt_product.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/purchase_log/templates/purchase_log/edit_split_receipt_product.html" afterPath="$PROJECT_DIR$/purchase_log/templates/purchase_log/edit_split_receipt_product.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/users/templates/users/f_request_details.html" afterPath="$PROJECT_DIR$/users/templates/users/f_request_details.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/purchase_log/forms.py" afterPath="$PROJECT_DIR$/purchase_log/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/users/forms.py" afterPath="$PROJECT_DIR$/users/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/users/templates/users/friends.html" afterPath="$PROJECT_DIR$/users/templates/users/friends.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/users/templates/users/inbox.html" afterPath="$PROJECT_DIR$/users/templates/users/inbox.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/purchase_log/templates/purchase_log/index.html" afterPath="$PROJECT_DIR$/purchase_log/templates/purchase_log/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/users/templates/users/login.html" afterPath="$PROJECT_DIR$/users/templates/users/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/purchase_log/models.py" afterPath="$PROJECT_DIR$/purchase_log/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/users/models.py" afterPath="$PROJECT_DIR$/users/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/purchase_log/templatetags/purchase_log.py" afterPath="$PROJECT_DIR$/purchase_log/templatetags/purchase_log.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/purchase_log/templates/purchase_log/receipt_details.html" afterPath="$PROJECT_DIR$/purchase_log/templates/purchase_log/receipt_details.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/purchase_log/templates/purchase_log/receipts.html" afterPath="$PROJECT_DIR$/purchase_log/templates/purchase_log/receipts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/users/templates/users/register.html" afterPath="$PROJECT_DIR$/users/templates/users/register.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grocery_helper/settings.py" afterPath="$PROJECT_DIR$/grocery_helper/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grocery_helper/urls.py" afterPath="$PROJECT_DIR$/grocery_helper/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/users/urls.py" afterPath="$PROJECT_DIR$/users/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/purchase_log/views.py" afterPath="$PROJECT_DIR$/purchase_log/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/users/views.py" afterPath="$PROJECT_DIR$/users/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -66,10 +34,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/purchase_log/templates/purchase_log/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8168168" vertical-offset="578" max-vertical-offset="2074">
+            <state vertical-scroll-proportion="-10.461538" vertical-offset="578" max-vertical-offset="2074">
               <caret line="50" column="19" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
               <folding />
             </state>
@@ -93,6 +61,18 @@
               <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
               <folding>
                 <element signature="e#745#819#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/users/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="2.2732732" vertical-offset="1946" max-vertical-offset="4454">
+              <caret line="159" column="47" selection-start-line="159" selection-start-column="47" selection-end-line="159" selection-end-column="47" />
+              <folding>
+                <element signature="e#0#54#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -155,13 +135,13 @@
         <option value="$PROJECT_DIR$/users/templates/users/message_details.html" />
         <option value="$PROJECT_DIR$/users/templates/users/make_message.html" />
         <option value="$PROJECT_DIR$/users/urls.py" />
-        <option value="$PROJECT_DIR$/users/views.py" />
         <option value="$PROJECT_DIR$/users/templates/users/inbox_base.html" />
         <option value="$PROJECT_DIR$/users/templates/users/sent_messages.html" />
         <option value="$PROJECT_DIR$/users/templates/users/inbox.html" />
         <option value="$PROJECT_DIR$/users/templates/users/friend_request.html" />
         <option value="$PROJECT_DIR$/purchase_log/templates/purchase_log/receipts.html" />
         <option value="$PROJECT_DIR$/purchase_log/templates/purchase_log/base.html" />
+        <option value="$PROJECT_DIR$/users/views.py" />
       </list>
     </option>
   </component>
@@ -710,7 +690,19 @@
       <option name="project" value="LOCAL" />
       <updated>1477940283180</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Added messaging functionality. Gearing up for making notifications when a user is tagged in another users receipt.">
+      <created>1479324573865</created>
+      <option name="number" value="00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1479324573865</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Added messaging functionality. Gearing up for making notifications when a user is tagged in another users receipt.&#10;&#10;New template being used.">
+      <created>1479324643830</created>
+      <option name="number" value="00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1479324643830</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -739,6 +731,7 @@
     <layout>
       <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32996634" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3267974" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294509" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -751,7 +744,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -792,7 +784,9 @@
     <MESSAGE value="Changed some indentation on add_friend_form.html" />
     <MESSAGE value="Created share items join table to split the cost of items. &#10;Automatically creates a share item associated with the current user at the creation of a new receipt product. &#10;Formset added to the receipt product creation page under receipt that are 'split'." />
     <MESSAGE value="Changed the edit share item view to more accurately display instances of already existing formsets." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed the edit share item view to more accurately display instances of already existing formsets." />
+    <MESSAGE value="Added messaging functionality. Gearing up for making notifications when a user is tagged in another users receipt." />
+    <MESSAGE value="Added messaging functionality. Gearing up for making notifications when a user is tagged in another users receipt.&#10;&#10;New template being used." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added messaging functionality. Gearing up for making notifications when a user is tagged in another users receipt.&#10;&#10;New template being used." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1185,16 +1179,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/users/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1478" max-vertical-offset="4386">
-          <caret line="92" column="4" selection-start-line="92" selection-start-column="4" selection-end-line="92" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/users/templates/users/friend_request.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2035928" vertical-offset="0" max-vertical-offset="527">
@@ -1225,9 +1209,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/purchase_log/templates/purchase_log/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8168168" vertical-offset="578" max-vertical-offset="2074">
+        <state vertical-scroll-proportion="-10.461538" vertical-offset="578" max-vertical-offset="2074">
           <caret line="50" column="19" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.2732732" vertical-offset="1946" max-vertical-offset="4454">
+          <caret line="159" column="47" selection-start-line="159" selection-start-column="47" selection-end-line="159" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

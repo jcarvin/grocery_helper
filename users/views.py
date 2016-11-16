@@ -156,7 +156,11 @@ def sent_messages(request, user_id):
 
 
 def message_details(request, message_id):
-    message = Message.objects.read_message(message_id)
+    current_message = Message.objects.get(pk=message_id)
+    if current_message.to_user != request.user:
+        message = Message.objects.get(pk=message_id)
+    else:
+        message = Message.objects.read_message(message_id)
     context = {
         'message': message,
         'user': request.user,
