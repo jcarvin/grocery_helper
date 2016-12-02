@@ -1,0 +1,17 @@
+{% extends 'users/inbox_base.html' %}
+
+{% block receipt_notifications_active %}active{% endblock %}
+
+
+{% block sub_body %}
+  {% for notification in notification_list %}
+    <ul class="nav nav-tabs" style="margin-bottom: 15px;">
+      <li>
+        {% if notification.read == False %}<i class="fa fa-star" style="color: #ffff00"> NEW</i>{% endif %}
+        <a href="{% url 'purchase_log:share_notification_details' notification.id %}">
+          From: {{ notification.from_user }} at {{ notification.receipt.store.name|title }} on {{ notification.receipt.date }}
+        </a>
+      </li>
+    </ul>
+  {% endfor %}
+{% endblock %}

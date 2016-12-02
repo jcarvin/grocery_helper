@@ -45,4 +45,10 @@ urlpatterns = [
 
     # purchase_log/products/<item_id>
     url(r'^products/(?P<product_id>\d+)/$', views.product_details, name='product_details'),
+
+    #purchase_log/share_notifications/<user_id>
+    url(r'^share_notifications/(?P<user_id>\d+)/$', views.receipt_notifications, name='share_notifications'),
+
+    #purchase_log/share_notification_details/<share_notification_id>
+    url(r'^share_notification_details/(?P<share_notification_id>\d+)/$', views.share_notification_details, name='share_notification_details'),
 ]

@@ -4,9 +4,10 @@
 <div class="col-lg-4">
   <div class="bs-example">
     <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
-      <li class="{% block inbox_active %}{% endblock %}"><a href="{% url 'users:inbox' user.id %}">Inbox</a></li>
+      <li class="{% block inbox_active %}{% endblock %}"><a href="{% url 'users:inbox' user.id %}">Inbox <span class="badge">{{ num_of_new_messages }}</span></a></li>
       <li class="{% block sent_active %}{% endblock %}"><a href="{% url 'users:sent_messages' user.id %}">Sent Messages</a></li>
-      <li class="{% block requests_active %}{% endblock %}"><a href="{% url 'users:friend_requests' user.id %}">Friend Requests</a></li>
+      <li class="{% block requests_active %}{% endblock %}"><a href="{% url 'users:friend_requests' user.id %}">Friend Requests <span class="badge">{{ num_of_new_friend_requests }}</span></a></li>
+      <li class="{% block receipt_notifications_active %}{% endblock %}"><a href="{% url 'purchase_log:share_notifications' user.id %}">Receipt Notifications <span class="badge">{{ num_of_new_share_notifications }}</span></a></li>
     </ul>
   </div>
 </div>

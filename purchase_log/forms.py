@@ -5,21 +5,34 @@ from django.forms import extras
 from django.contrib.auth.models import User
 from friendship.models import Friend
 
-
-
 from .models import Receipt, ReceiptProduct, Product, Store, ShareItem
 
 
 class AddSplitItemForm(ModelForm):
 
     def __init__(self, user, *args, **kwargs):
+        pk_list = [friend.id for friend in Friend.objects.friends(user)]
+        pk_list.append(user.id)
         super(AddSplitItemForm, self).__init__(*args, **kwargs)
+        self.fields['purchaser'] = forms.ModelChoiceField(queryset=User.objects.filter(pk__in=pk_list))
+        self.fields['purchaser'].label = 'Who Purchased This Item?'
         self.fields['product'] = forms.ModelChoiceField(queryset=Product.objects.filter(owner=user))
 
     class Meta:
         model = ReceiptProduct
-        fields = ['product', 'price', 'description', 'split', 'sale', 'tax']
-        labels = {'sale': 'On Sale', 'tax': 'Is This Item Taxed?'}
+        fields = [
+            'product',
+            'purchaser',
+            'price',
+            'description',
+            'split',
+            'sale',
+            'tax',
+        ]
+        labels = {
+            'sale': 'On Sale',
+            'tax': 'Is This Item Taxed?',
+        }
 
 
 class AddItemForm(ModelForm):
@@ -30,22 +43,27 @@ class AddItemForm(ModelForm):
 
     class Meta:
         model = ReceiptProduct
-        fields = ['split', 'product', 'price', 'description', 'sale', 'tax']
-        labels = {'sale': 'On Sale', 'tax': 'Is This Item Taxed?'}
+        fields = [
+            'product',
+            'price',
+            'description',
+            'sale',
+            'tax',
+        ]
+        labels = {
+            'sale': 'On Sale',
+            'tax': 'Is This Item Taxed?',
+        }
 
 
 class ShareItemForm(ModelForm):
 
-    def __init__(self, *args, **kwargs):
-        user = kwargs.pop('user')
+    def __init__(self, user, *args, **kwargs):
+        super(ShareItemForm, self).__init__(*args, **kwargs)
+        # user = kwargs.pop('user')
         pk_list = [friend.id for friend in Friend.objects.friends(user)]
         pk_list.append(user.id)
-        super(ShareItemForm, self).__init__(*args, **kwargs)
         self.fields['purchasers'] = forms.ModelChoiceField(queryset=User.objects.filter(pk__in=pk_list))
-
-    # def __init__(self, user, *args, **kwargs):
-    #     super(ShareItemForm, self).__init__(*args, **kwargs)
-    #     self.fields['purchasers'] = forms.ModelChoiceField(queryset=Friend.objects.friends(user))
 
     class Meta:
         model = ShareItem
@@ -67,17 +85,21 @@ class AddReceiptForm(ModelForm):
             'date',
             'split',
             'tax',
-            'pic'
+            'pic',
         ]
 
 
 class AddStoreForm(ModelForm):
     class Meta:
         model = Store
-        fields = ['name']
+        fields = [
+            'name',
+        ]
 
 
 class AddProductForm(ModelForm):
     class Meta:
         model = Product
-        fields = ['type']
+        fields = [
+            'type',
+        ]

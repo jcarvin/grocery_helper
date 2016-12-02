@@ -8,28 +8,42 @@ from django.contrib.auth.decorators import login_required
 
 from .forms import UserCreateForm, AddFriendForm, MakeMessageForm
 from .models import Message
-from purchase_log.models import Receipt
+from purchase_log.models import Receipt, ShareNotification
+
 
 def get_common_context(user, receipt_id=None):
     # Retrieves commonly re-used data for certain views.
     common_context = {}
     receipt_list = []  # Always in common_context
     total_dict = {}  # Always in common_context
+    num_of_new_friend_requests = len(Friend.objects.unread_requests(user=user))
     new_messages = [message for message in Message.objects.filter(to_user=user) if message.read is False]
+    new_share_notifications = [
+        notification for notification in ShareNotification.objects.filter(
+            to_user=user,
+            read=False
+        )
+    ]
     num_of_new_messages = len(new_messages)
+    num_of_new_share_notifications = len(new_share_notifications)
+    common_context['num_of_new_friend_requests'] = num_of_new_friend_requests
     common_context['num_of_new_messages'] = num_of_new_messages
+    common_context['num_of_new_share_notifications'] = num_of_new_share_notifications
+    common_context['total_new_notifications'] = num_of_new_share_notifications + num_of_new_messages + num_of_new_friend_requests
+    description = ''
     for receipt in Receipt.objects.all():
         if receipt.owner == user:
             receipt_list.append(receipt)
             temp_list = [item.price for item in receipt.receiptproduct_set.all()]
-            taxed_items = [item.price for item in receipt.receiptproduct_set.all() if item.tax == True]
+            taxed_items = [item.price for item in receipt.receiptproduct_set.all() if item.tax]
             total_dict[receipt.id] = format(((sum(taxed_items)*receipt.tax)+(sum(temp_list))), '.2f')
             common_context["total_dict"] = total_dict
             common_context["receipt_list"] = receipt_list
     if receipt_id:
-        # only
         current_receipt = get_object_or_404(Receipt, pk=receipt_id)
-        if current_receipt.owner != user:
+        # Creates a set of users tagged in a receipt
+        list_of_purchasers = [item.shareitem_set.all() for item in current_receipt.receiptproduct_set.filter(split=True)]
+        if current_receipt.owner != user and user not in set([share_item.purchasers for share_item in list_of_purchasers[0]]):
             raise Http404
         items = current_receipt.receiptproduct_set.all()
         for item in items:
@@ -38,7 +52,7 @@ def get_common_context(user, receipt_id=None):
             else:
                 description = item.description
         total = sum([item.price for item in items])
-        taxed_items = [item.price for item in items if item.tax == True]
+        taxed_items = [item.price for item in items if item.tax]
         tax = (sum(taxed_items)*current_receipt.tax)
         total_and_tax = (total + tax)
         common_context['total'] = ("%.2f" % total)
@@ -46,6 +60,7 @@ def get_common_context(user, receipt_id=None):
         common_context['current_receipt'] = current_receipt
         common_context['items'] = items
         common_context['total_and_tax'] = ("%.2f" % total_and_tax)
+        common_context['description'] = description
     return common_context
 
 
@@ -131,6 +146,10 @@ def add_friend(request):
 
 
 def inbox(request, user_id):
+    user = User.objects.get(pk=user_id)
+    if user != request.user:
+        raise Http404
+
     message_list = [message for message in Message.objects.filter(to_user=User.objects.get(pk=user_id))]
     context = {
         'message_list': message_list

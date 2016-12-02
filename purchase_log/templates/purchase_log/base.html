@@ -52,7 +52,7 @@
                 <ul class="nav navbar-nav navbar-right navbar-user">
                   {% if user.is_authenticated %}
                     <li class="dropdown messages-dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> Messages <span class="badge">{{ num_of_new_messages }}</span> <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> Notifications <span class="badge">{{ total_new_notifications }}</span> <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li class="dropdown-header">{{ num_of_new_messages }}
                                 {% if not num_of_new_messages %}No{% endif %}
@@ -72,7 +72,9 @@
                                 </a>
                             </li>
                             <li class="divider"></li>
-                            <li><a href="{% url 'users:inbox' user.id %}">Go to Inbox <span class="badge">{{ num_of_new_messages }}</span></a></li>
+                            <li><a href="{% url 'users:inbox' user.id %}">Inbox <span class="badge">{{ num_of_new_messages }}</span></a></li>
+                            <li><a href="{% url 'purchase_log:share_notifications' user.id %}">Receipt Notifications <span class="badge">{{ num_of_new_share_notifications }}</span></a></li>
+
                         </ul>
                     </li>
                   {% else %}
