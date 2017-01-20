@@ -1,0 +1,17 @@
+{% extends 'users/inbox_base.html' %}
+
+{% block sent_active %}active{% endblock %}
+
+
+{% block sub_body %}
+  <a href="{% url 'users:make_message' user.id %}"><i class="fa fa-plus" style="color: #22bc07"> Compose</i></a>
+  {% for message in message_list %}
+    <ul class="nav nav-tabs" style="margin-bottom: 15px;">
+      <li>
+        <a href="{% url 'users:message_details' message.id %}">
+          To: {{ message.to_user }} - {{ message.subj }}
+        </a>
+      </li>
+    </ul>
+  {% endfor %}
+{% endblock %}

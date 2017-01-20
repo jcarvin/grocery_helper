@@ -44,10 +44,12 @@ INSTALLED_APPS = [
 
     # Third party apps
     'bootstrap3',
+    'friendship',
 
     # My Apps
     'purchase_log.apps.PurchaseLogConfig',
     'users.apps.UsersConfig',
+    'finances.apps.FinancesConfig',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +132,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

@@ -1,0 +1,25 @@
+{% extends 'users/inbox_base.html' %}
+
+
+<!-- This is to highlight the proper tab depending on weather or not the message was sent by the current user -->
+    {% block inbox_active %}
+        {% if message.to_user.id == user.id %}
+            active
+        {% endif %}
+    {% endblock %}
+    {% block sent_active %}
+        {% if message.from_user.id == user.id %}
+            active
+        {% endif %}
+    {% endblock %}
+
+<!-- This will display the message -->
+
+{% block sub_body %}
+    <div class="panel panel-default">
+      <div class="panel-heading">From: {{ message.from_user }} - {{ message.subj }}</div>
+      <div class="panel-body">
+        {{ message.text }}
+      </div>
+    </div>
+{% endblock %}

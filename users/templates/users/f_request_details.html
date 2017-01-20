@@ -1,0 +1,14 @@
+{% extends 'purchase_log/base.html' %}
+
+{% block body %}
+
+    {{ f_request.from_user|title }} would like to add you as a friend.
+
+    <input style="background-color: #6a8000;border-color: forestgreen;color: #000000" class="btn btn-primary" type="button" onClick="window.location.href='{% url 'users:accept_request' f_request.id %}'"
+           value="Accept"/>
+    <input style="background-color: #6a8000;border-color: forestgreen;color: #000000" class="btn btn-primary" type="button" onClick="window.location.href='{% url 'users:decline_request' f_request.id %}'"
+           value="Decline"/>
+    <input style="background-color: #6a8000;border-color: forestgreen;color: #000000" class="btn btn-primary" type="button" onClick="window.location.href='{% url 'users:ignore_request' f_request.from_user_id %}'"
+           value="Ignore"/>
+
+{% endblock %}

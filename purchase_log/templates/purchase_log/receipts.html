@@ -1,18 +1,69 @@
 {% extends 'purchase_log/base.html' %}
 
-{% block title %}Receipts{% endblock %}
+{% load purchase_log %}
+
+{% block receipts_selected %}class="selected"{% endblock %}
 
 {% block body %}
+    <div id="masthead">
+      <div class="container">
+          <div class="row">
+            <div class="col-md-7">
+              <h1>Finances
+                <p class="lead">I don't know what to put here, but it looks nice.</p>
+              </h1>
+            </div>
 
-    {% for receipt in receipt_list %}
-        <ul>
-            <li><a href="{% url 'purchase_log:receipt_details' receipt.id %}">{{ receipt }}</a>
-            </li>
-        </ul>
-    {% endfor %}
-    {% block form %}{% endblock %}
-    {% block button %}
-    <input type="button" onClick="window.location.href='{% url 'purchase_log:add_receipt' %}'"
-           value="Add Receipt"/>
-    {% endblock %}
+          </div>
+      </div><!--/container-->
+    </div><!--/masthead-->
+
+    <!--main-->
+    <div class="container">
+        <div class="row">
+          <!--left-->
+          <div class="col-md-3" id="leftCol">
+            {% block form %}{% endblock %}
+            {% block receipt_button %}
+                <input type="button" style="background-color: #6a8000;border-color: forestgreen;color: #000000" class="btn btn-primary" onClick="window.location.href='{% url 'purchase_log:add_receipt' %}'"
+                       value="Add Receipt"/>
+            {% endblock %}
+            {% for receipt in receipt_list %}
+                <ul>
+                  <li>
+                    <a href="{% url 'purchase_log:receipt_details' receipt.id %}">{% if receipt.split %}<i class="fa fa-user-plus" aria-hidden="true"></i>{% endif %}
+                      {{ receipt }}
+                    </a>
+                    :${{ total_dict|get_item:receipt.id }}
+                    <a href="{% url 'purchase_log:delete_receipt' receipt.id %}" style="color: red">Delete</a>
+                    <a href="{% url 'purchase_log:edit_receipt' receipt.id %}"
+                       style="color: blue">Edit</a>
+                  </li>
+                </ul>
+            {% endfor %}
+
+          </div><!--/left-->
+
+          <!--right-->
+          <div class="col-md-9">
+            <div class="well">
+              {% if current_receipt.pic %}
+                <div class="col-md-5">
+                  <div class="well well-lg">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <a href="{{ current_receipt.pic.url }}"><img src="{{ current_receipt.pic.url }}" class="img-responsive"></a>
+                      </div>
+                        <div class="col-sm-6">
+                          {{ current_receipt }}
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+                {% block receipt %}{% endblock %}
+          </div><!--/row-->
+        </div><!--/container-->
+    </div>
+
 {% endblock %}
