@@ -1,0 +1,1191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b6871be1-c29c-4010-a915-3413edb2b309" name="Default" comment="Added notifications to users when they are tagged in a receipt. There is still no way to accept or refuse a receipt. &#10;&#10;- Added ShareNotification &#10;- Added ShareNotification manager (to mark notifications as being read when is appropriate." />
+    <ignored path="grocery_helper.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" module-name="grocery_helper" is-module-sdk="true">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+    <option name="myUseModuleSdk" value="true" />
+    <option name="myModuleName" value="grocery_helper" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="grocery_helper" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/purchase_log/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="606" max-vertical-offset="1496">
+              <caret line="53" column="22" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/purchase_log/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="83" max-vertical-offset="7174">
+              <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#54#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/users/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.0380952" vertical-offset="2791" max-vertical-offset="6504">
+              <caret line="149" column="28" selection-start-line="149" selection-start-column="28" selection-end-line="149" selection-end-column="28" />
+              <folding>
+                <marker date="1484924728657" expanded="false" signature="0:35" placeholder="import ..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/purchase_log/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1649" max-vertical-offset="1751">
+              <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="inbox_base.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/users/templates/users/inbox_base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="425">
+              <caret line="8" column="177" selection-start-line="8" selection-start-column="177" selection-end-line="8" selection-end-column="177" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="share_notification_details.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/purchase_log/templates/purchase_log/share_notification_details.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="578" max-vertical-offset="884">
+              <caret line="34" column="48" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="receipt_details.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/purchase_log/templates/purchase_log/receipt_details.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="748" max-vertical-offset="850">
+              <caret line="44" column="0" selection-start-line="38" selection-start-column="7" selection-end-line="44" selection-end-column="0" />
+              <folding>
+                <marker date="1484924728518" expanded="true" signature="1744:1886" placeholder="{% block body ... %}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/purchase_log/templates/purchase_log/add_item_form.html" />
+        <option value="$PROJECT_DIR$/purchase_log/templates/purchase_log/add_product_form.html" />
+        <option value="$PROJECT_DIR$/grocery_helper/templates/grocery_helper/base.html" />
+        <option value="$PROJECT_DIR$/purchase_log/templates/purchase_log/delete_Receipt_product.html" />
+        <option value="$PROJECT_DIR$/purchase_log/templates/purchase_log/delete_receipt_product.html" />
+        <option value="$PROJECT_DIR$/users/apps.py" />
+        <option value="$PROJECT_DIR$/purchase_log/migrations/0009_auto_20161005_1524.py" />
+        <option value="$PROJECT_DIR$/purchase_log/templatetags/__init__.py" />
+        <option value="$PROJECT_DIR$/grocery_helper/__init__.py" />
+        <option value="$PROJECT_DIR$/purchase_log/templates/purchase_log/product_details.html" />
+        <option value="$PROJECT_DIR$/purchase_log/templatetags/purchase_log.py" />
+        <option value="$PROJECT_DIR$/finances/urls.py" />
+        <option value="$PROJECT_DIR$/purchase_log/templates/purchase_log/java_receipts_test.html" />
+        <option value="$PROJECT_DIR$/finances/templates/finances/index.html" />
+        <option value="$PROJECT_DIR$/finances/views.py" />
+        <option value="$PROJECT_DIR$/purchase_log/templates/purchase_log/left_navbar_test.html" />
+        <option value="$PROJECT_DIR$/purchase_log/templates/purchase_log/index.html" />
+        <option value="$PROJECT_DIR$/purchase_log/static/purchase_log/css/local.css" />
+        <option value="$PROJECT_DIR$/grocery_helper/urls.py" />
+        <option value="$PROJECT_DIR$/grocery_helper/settings.py" />
+        <option value="$PROJECT_DIR$/users/templates/users/login.html" />
+        <option value="$PROJECT_DIR$/purchase_log/templates/purchase_log/add_receipt_form.html" />
+        <option value="$PROJECT_DIR$/users/templates/users/register.html" />
+        <option value="$PROJECT_DIR$/purchase_log/templates/purchase_log/add_receipt_product_form.html" />
+        <option value="$PROJECT_DIR$/purchase_log/templates/purchase_log/add_store_form.html" />
+        <option value="$PROJECT_DIR$/purchase_log/templates/purchase_log/add_product_type_form.html" />
+        <option value="$PROJECT_DIR$/purchase_log/templates/purchase_log/edit_receipt.html" />
+        <option value="$PROJECT_DIR$/purchase_log/templates/purchase_log/edit_receipt_product.html" />
+        <option value="$PROJECT_DIR$/purchase_log/templates/purchase_log/edit_split_receipt_product.html" />
+        <option value="$PROJECT_DIR$/purchase_log/templates/purchase_log/receipt_details.html" />
+        <option value="$PROJECT_DIR$/users/templates/users/add_friend_form.html" />
+        <option value="$PROJECT_DIR$/users/templates/users/f_request_details.html" />
+        <option value="$PROJECT_DIR$/users/models.py" />
+        <option value="$PROJECT_DIR$/users/templates/users/friends.html" />
+        <option value="$PROJECT_DIR$/users/forms.py" />
+        <option value="$PROJECT_DIR$/users/templates/users/message_details.html" />
+        <option value="$PROJECT_DIR$/users/templates/users/make_message.html" />
+        <option value="$PROJECT_DIR$/users/urls.py" />
+        <option value="$PROJECT_DIR$/users/templates/users/sent_messages.html" />
+        <option value="$PROJECT_DIR$/users/templates/users/inbox.html" />
+        <option value="$PROJECT_DIR$/users/templates/users/friend_request.html" />
+        <option value="$PROJECT_DIR$/purchase_log/templates/purchase_log/receipts.html" />
+        <option value="$PROJECT_DIR$/purchase_log/templates/purchase_log/base.html" />
+        <option value="$PROJECT_DIR$/purchase_log/urls.py" />
+        <option value="$PROJECT_DIR$/purchase_log/templates/purchase_log/receipt_notification.html" />
+        <option value="$PROJECT_DIR$/users/templates/users/inbox_base.html" />
+        <option value="$PROJECT_DIR$/users/views.py" />
+        <option value="$PROJECT_DIR$/purchase_log/templates/purchase_log/share_notification_details.html" />
+        <option value="$PROJECT_DIR$/purchase_log/forms.py" />
+        <option value="$PROJECT_DIR$/purchase_log/views.py" />
+        <option value="$PROJECT_DIR$/purchase_log/models.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grocery_helper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grocery_helper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grocery_helper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grocery_helper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grocery_helper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="purchase_log" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/GitHub/PortableGit_d7effa1a4a322478cd29c826b52a0c118ad3db11/cmd/git.exe" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="options.lastSelected" value="preferences.lookFeel" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="FullScreen" value="false" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="SearchEverywhereHistoryKey" value="receipt&#9;FILE&#9;file://C:/GitHub/Django_1/grocery_helper/purchase_log/templates/purchase_log/receipts_old.html" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings />
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\GitHub\Django_1\grocery_helper\grocery_helper\templates\grocery_helper" />
+      <recent name="C:\GitHub\Django_1\grocery_helper\purchase_log\static\purchase_log" />
+      <recent name="C:\GitHub\Django_1\grocery_helper" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\GitHub\Django_1\grocery_helper\grocery_helper\templates" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Django server.grocery_helper">
+    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="grocery_helper" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="grocery_helper" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="grocery_helper" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="grocery_helper" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="grocery_helper" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="testToRun" value="" />
+      <option name="keywords" value="" />
+      <option name="params" value="" />
+      <option name="USE_PARAM" value="false" />
+      <option name="USE_KEYWORD" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="grocery_helper" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Attests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="grocery_helper" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="grocery_helper" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="grocery_helper" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="grocery_helper" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="grocery_helper" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="grocery_helper.settings" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\jdcar\AppData\Local\Programs\Python\Python35-32\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="grocery_helper" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="0.0.0.0" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Django server.grocery_helper" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b6871be1-c29c-4010-a915-3413edb2b309" name="Default" comment="" />
+      <created>1474052418943</created>
+      <option name="number" value="Default" />
+      <updated>1474052418943</updated>
+    </task>
+    <task id="LOCAL-00001" summary="added functionality to buttons. Turned individual items into links that show thier purchase history. Added tax and subtotal functionality.&#10; &#10; Still need to create for to add receipts and link it to the button. Also need to create a way to add product types to extend the dropdown lis in the ReceiptProduct form">
+      <created>1474658104269</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1474658104269</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added Users. Not yet with any functionality. &#10;Receipts is now fully functional in tracking purchases.">
+      <created>1475609368622</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1475609368622</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added Users. Not yet with any functionality. &#10;Receipts is now fully functional in tracking purchases.">
+      <created>1475863311136</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1475863311136</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added Users. Not yet with any functionality. &#10;Receipts is now fully functional in tracking purchases.">
+      <created>1475863339298</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1475863339298</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added Users. Not yet with any functionality. &#10;Receipts is now fully functional in tracking purchases.">
+      <created>1475863449871</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1475863449871</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Created dropdown menu for logged in users. &#10;Created ownership of objects. &#10;limited views to users who own items.">
+      <created>1475868801581</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1475868801581</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added Friendship &#10;&#10;Not yet functional.">
+      <created>1475871256136</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1475871256136</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added price to receipts list page. &#10;    added templatetags file in order to search dictionary in templates&#10;Added tax column to Receipt model.&#10;    need to add to form.">
+      <created>1475974996417</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1475974996417</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added delete buttons. and made existing delete buttons red&#10;&#10;Changed date widget and set initial value to 'now'">
+      <created>1476045905303</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1476045905303</updated>
+    </task>
+    <task id="LOCAL-00010" summary="migrations&#10;">
+      <created>1476045943188</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1476045943188</updated>
+    </task>
+    <task id="LOCAL-00011" summary="migrations&#10;">
+      <created>1476045970082</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1476045970083</updated>
+    </task>
+    <task id="LOCAL-00012" summary="migrations&#10;">
+      <created>1476120925181</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1476120925181</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Added Email field to user creation">
+      <created>1476120968242</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1476120968242</updated>
+    </task>
+    <task id="LOCAL-00014" summary="replaced get() functions with get_object_or_404()">
+      <created>1476122132136</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1476122132136</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Added edit buttons, and began developing functionality in the 'friends' section.">
+      <created>1476142408824</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1476142408824</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Users can now friend other users with an email.">
+      <created>1476726429710</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1476726429710</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Users can now accept decline and ignore friend requests.">
+      <created>1476815150349</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1476815150349</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Can now delete friendships. =[">
+      <created>1476816069694</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1476816069694</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Changed some indentation on add_friend_form.html">
+      <created>1476990273838</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1476990273838</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Created share items join table to split the cost of items. &#10;Automatically creates a share item associated with the current user at the creation of a new receipt product. &#10;Formset added to the receipt product creation page under receipt that are 'split'.">
+      <created>1477938340324</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1477938340324</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Created share items join table to split the cost of items. &#10;Automatically creates a share item associated with the current user at the creation of a new receipt product. &#10;Formset added to the receipt product creation page under receipt that are 'split'.">
+      <created>1477938379051</created>
+      <option name="number" value="00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1477938379051</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Created share items join table to split the cost of items. &#10;Automatically creates a share item associated with the current user at the creation of a new receipt product. &#10;Formset added to the receipt product creation page under receipt that are 'split'.">
+      <created>1477938399208</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1477938399208</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Changed the edit share item view to more accurately display instances of already existing formsets.">
+      <created>1477940283180</created>
+      <option name="number" value="00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1477940283180</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Added messaging functionality. Gearing up for making notifications when a user is tagged in another users receipt.">
+      <created>1479324573865</created>
+      <option name="number" value="00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1479324573865</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Added messaging functionality. Gearing up for making notifications when a user is tagged in another users receipt.&#10;&#10;New template being used.">
+      <created>1479324643830</created>
+      <option name="number" value="00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1479324643830</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
+    <servers />
+  </component>
+  <component name="TodoView" selected-index="4">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31657755" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32659933" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36484244" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294509" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32659933" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962063" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36414254" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32747602" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32996634" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+    <MESSAGE value="urls for purchase log" />
+    <MESSAGE value="added functionality to buttons. Turned individual items into links that show thier purchase history. Added tax and subtotal functionality.&#10; &#10; Still need to create for to add receipts and link it to the button. Also need to create a way to add product types to extend the dropdown lis in the ReceiptProduct form" />
+    <MESSAGE value="Added Users. Not yet with any functionality. &#10;Receipts is now fully functional in tracking purchases." />
+    <MESSAGE value="Created dropdown menu for logged in users. &#10;Created ownership of objects. &#10;limited views to users who own items." />
+    <MESSAGE value="Added Friendship &#10;&#10;Not yet functional." />
+    <MESSAGE value="Added price to receipts list page. &#10;    added templatetags file in order to search dictionary in templates&#10;Added tax column to Receipt model.&#10;    need to add to form." />
+    <MESSAGE value="Added delete buttons. and made existing delete buttons red&#10;&#10;Changed date widget and set initial value to 'now'" />
+    <MESSAGE value="migrations&#10;" />
+    <MESSAGE value="Added Email field to user creation" />
+    <MESSAGE value="replaced get() functions with get_object_or_404()" />
+    <MESSAGE value="Added edit buttons, and began developing functionality in the 'friends' section." />
+    <MESSAGE value="Users can now friend other users with an email." />
+    <MESSAGE value="Users can now accept decline and ignore friend requests." />
+    <MESSAGE value="Can now delete friendships. =[" />
+    <MESSAGE value="Changed some indentation on add_friend_form.html" />
+    <MESSAGE value="Created share items join table to split the cost of items. &#10;Automatically creates a share item associated with the current user at the creation of a new receipt product. &#10;Formset added to the receipt product creation page under receipt that are 'split'." />
+    <MESSAGE value="Changed the edit share item view to more accurately display instances of already existing formsets." />
+    <MESSAGE value="Added messaging functionality. Gearing up for making notifications when a user is tagged in another users receipt." />
+    <MESSAGE value="Added messaging functionality. Gearing up for making notifications when a user is tagged in another users receipt.&#10;&#10;New template being used." />
+    <MESSAGE value="Added notifications to users when they are tagged in a receipt. There is still no way to accept or refuse a receipt. &#10;&#10;- Added ShareNotification &#10;- Added ShareNotification manager (to mark notifications as being read when is appropriate." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added notifications to users when they are tagged in a receipt. There is still no way to accept or refuse a receipt. &#10;&#10;- Added ShareNotification &#10;- Added ShareNotification manager (to mark notifications as being read when is appropriate." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="32" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/purchase_log/templates/purchase_log/share_notification_details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="578" max-vertical-offset="884">
+          <caret line="34" column="48" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchase_log/templates/purchase_log/receipt_details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="748" max-vertical-offset="850">
+          <caret line="44" column="0" selection-start-line="38" selection-start-column="7" selection-end-line="44" selection-end-column="0" />
+          <folding>
+            <marker date="1484924728518" expanded="true" signature="1744:1886" placeholder="{% block body ... %}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchase_log/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1496">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchase_log/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="83" max-vertical-offset="7174">
+          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4505" max-vertical-offset="4607">
+          <caret line="275" column="62" selection-start-line="275" selection-start-column="62" selection-end-line="275" selection-end-column="62" />
+          <folding>
+            <marker date="1484924728657" expanded="false" signature="0:35" placeholder="import ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchase_log/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1649" max-vertical-offset="1751">
+          <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/templates/users/inbox_base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="19" max-vertical-offset="425">
+          <caret line="8" column="177" selection-start-line="8" selection-start-column="177" selection-end-line="8" selection-end-column="177" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchase_log/templates/purchase_log/share_notification_details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="346" max-vertical-offset="884">
+          <caret line="34" column="48" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchase_log/templates/purchase_log/receipt_notification.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="374">
+          <caret line="10" column="64" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchase_log/templates/purchase_log/receipt_details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="748" max-vertical-offset="850">
+          <caret line="44" column="0" selection-start-line="38" selection-start-column="7" selection-end-line="44" selection-end-column="0" />
+          <folding>
+            <marker date="1484924728518" expanded="true" signature="1744:1886" placeholder="{% block body ... %}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchase_log/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="884" max-vertical-offset="986">
+          <caret line="53" column="1" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchase_log/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="765">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchase_log/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2346">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="578">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding>
+            <marker date="1484924728657" expanded="false" signature="0:35" placeholder="import ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchase_log/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="527">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/templates/users/inbox_base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="19" max-vertical-offset="425">
+          <caret line="8" column="177" selection-start-line="8" selection-start-column="177" selection-end-line="8" selection-end-column="177" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchase_log/templates/purchase_log/share_notification_details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="346" max-vertical-offset="884">
+          <caret line="34" column="48" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchase_log/templates/purchase_log/receipt_notification.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="374">
+          <caret line="10" column="64" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchase_log/templates/purchase_log/receipt_details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="527" max-vertical-offset="629">
+          <caret line="31" column="0" selection-start-line="4" selection-start-column="2" selection-end-line="31" selection-end-column="0" />
+          <folding>
+            <marker date="1484924728518" expanded="true" signature="1744:1886" placeholder="{% block body ... %}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchase_log/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="612">
+          <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchase_log/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="382">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grocery_helper/templates/grocery_helper/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.1061453" vertical-offset="617" max-vertical-offset="1445">
+          <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grocery_helper/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="441">
+          <caret line="0" column="9" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchase_log/templates/purchase_log/product_details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="391">
+          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchase_log/templates/purchase_log/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="1071">
+          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.230563" vertical-offset="86" max-vertical-offset="459">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/templates/users/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.8846154" vertical-offset="85" max-vertical-offset="493">
+          <caret line="14" column="95" selection-start-line="14" selection-start-column="95" selection-end-line="14" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/templates/users/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="340">
+          <caret line="8" column="87" selection-start-line="8" selection-start-column="87" selection-end-line="8" selection-end-column="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchase_log/templates/purchase_log/add_store_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="306">
+          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchase_log/templates/purchase_log/add_receipt_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="340">
+          <caret line="7" column="110" selection-start-line="7" selection-start-column="110" selection-end-line="7" selection-end-column="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchase_log/templates/purchase_log/add_product_type_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="306">
+          <caret line="7" column="124" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="124" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grocery_helper/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="188" max-vertical-offset="561">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grocery_helper/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="42.53846" vertical-offset="2007" max-vertical-offset="2414">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.088" vertical-offset="1" max-vertical-offset="561">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchase_log/templates/purchase_log/add_receipt_product_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="374">
+          <caret line="9" column="124" selection-start-line="9" selection-start-column="124" selection-end-line="9" selection-end-column="124" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DjangoModelDependency/#grocery_helper">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DjangoModelDependency</ID>
+          <OriginalElement>#grocery_helper</OriginalElement>
+          <nodes>
+            <node x="" y="">django.contrib.auth.models.Group</node>
+            <node x="" y="">django.contrib.contenttypes.models.ContentType</node>
+            <node x="" y="">purchase_log.models.Product</node>
+            <node x="" y="">purchase_log.models.Store</node>
+            <node x="" y="">django.contrib.auth.models.Permission</node>
+            <node x="" y="">purchase_log.models.Receipt</node>
+            <node x="" y="">purchase_log.models.ReceiptProduct</node>
+            <node x="" y="">django.contrib.auth.models.User</node>
+            <node x="" y="">purchase_log.models.ShareNotification</node>
+            <node x="" y="">purchase_log.models.ShareItem</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.4745033112582782" x="370.0" y="495.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="528" max-vertical-offset="969">
+          <caret line="37" column="40" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchase_log/templates/purchase_log/receipts.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3878205" vertical-offset="338" max-vertical-offset="1258">
+          <caret line="27" column="171" selection-start-line="27" selection-start-column="170" selection-end-line="27" selection-end-column="171" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchase_log/templates/purchase_log/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.269231" vertical-offset="1112" max-vertical-offset="2108">
+          <caret line="75" column="67" selection-start-line="75" selection-start-column="67" selection-end-line="75" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchase_log/templates/purchase_log/receipt_notification.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="374">
+          <caret line="10" column="64" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchase_log/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="884" max-vertical-offset="986">
+          <caret line="53" column="1" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchase_log/templates/purchase_log/receipt_details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="748" max-vertical-offset="850">
+          <caret line="44" column="0" selection-start-line="38" selection-start-column="7" selection-end-line="44" selection-end-column="0" />
+          <folding>
+            <marker date="1484924728518" expanded="true" signature="1744:1886" placeholder="{% block body ... %}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/templates/users/inbox_base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="19" max-vertical-offset="425">
+          <caret line="8" column="177" selection-start-line="8" selection-start-column="177" selection-end-line="8" selection-end-column="177" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchase_log/templates/purchase_log/share_notification_details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="346" max-vertical-offset="884">
+          <caret line="34" column="48" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchase_log/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1734" max-vertical-offset="1836">
+          <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchase_log/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="83" max-vertical-offset="7174">
+          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchase_log/static/purchase_log/bootstrap/js/bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.824561" vertical-offset="4386" max-vertical-offset="39491">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchase_log/static/purchase_log/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47887325" vertical-offset="0" max-vertical-offset="355">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchase_log/static/purchase_log/js/jquery-1.10.2.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="342">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purchase_log/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="606" max-vertical-offset="1496">
+          <caret line="53" column="22" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0380952" vertical-offset="2791" max-vertical-offset="6504">
+          <caret line="149" column="28" selection-start-line="149" selection-start-column="28" selection-end-line="149" selection-end-column="28" />
+          <folding>
+            <marker date="1484924728657" expanded="false" signature="0:35" placeholder="import ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
